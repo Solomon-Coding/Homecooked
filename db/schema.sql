@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS app_db;
-CREATE DATABASE app_db;
+DROP DATABASE IF EXISTS homecooked_db;
+CREATE DATABASE homecooked_db;
