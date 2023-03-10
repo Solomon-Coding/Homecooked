@@ -28,6 +28,12 @@ recipes.init(
     ingredients: {
         type: DataTypes.VARCHAR(65535),
         allowNull: false,
+    },
+    category_id: {
+      type: DataTypes.INTEGER,
+    },
+    style_id: {
+      type: DataTypes.INTEGER,
     }
   },
   {
