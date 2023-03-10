@@ -22,7 +22,7 @@ Recipes.belongsTo(Category,
 // Every recipe falls within a particular food style
   Recipes.belongsTo(Style,
     {
-      foreignKey: 'category_id',
+      foreignKey: 'style_id',
       onDelete: 'CASCADE',
     }
   );
@@ -30,7 +30,7 @@ Recipes.belongsTo(Category,
 // Every style can refer to many recipe's
 Style.hasMany(Recipes,
     {
-      foreignKey: 'category_id',
+      foreignKey: 'style_id',
     }
   );
 

@@ -1,32 +1,20 @@
 const { Style } = require('../models');
 
-const tagData = [
+const styleData = [
   {
-    tag_name: 'rock music',
+    style_name: 'American',
   },
   {
-    tag_name: 'pop music',
+    style_name: 'French',
   },
   {
-    tag_name: 'blue',
+    style_name: 'Italian',
   },
   {
-    tag_name: 'red',
-  },
-  {
-    tag_name: 'green',
-  },
-  {
-    tag_name: 'white',
-  },
-  {
-    tag_name: 'gold',
-  },
-  {
-    tag_name: 'pop culture',
+    style_name: 'Mexican',
   },
 ];
 
-const seedTags = () => Tag.bulkCreate(tagData);
+const seedStyle = () => Style.bulkCreate(styleData);
 
-module.exports = seedTags;
+module.exports = seedStyle;
