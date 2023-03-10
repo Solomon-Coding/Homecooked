@@ -1,7 +1,8 @@
 const User = require('./User');
+const Style = require('./Style');
 const Recipes = require('./Recipes');
 const Category = require('./Category');
-const Style = require('./Style');
+
 
 // Every recipe falls within a category
 Recipes.belongsTo(Category,
