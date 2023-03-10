@@ -1,23 +1,23 @@
-const { Recipes } = require('../models');
+// const { Recipes } = require('../models');
 
-const recipesData = [
-  {
+// const recipesData = [
+//   {
 
-  },
-  {
+//   },
+//   {
 
-  },
-  {
+//   },
+//   {
 
-  },
-  {
+//   },
+//   {
 
-  },
-  {
+//   },
+//   {
 
-  },
-];
+//   },
+// ];
 
-const seedRecipes = () => Recipes.bulkCreate(recipesData);
+// const seedRecipes = () => Recipes.bulkCreate(recipesData);
 
-module.exports = seedRecipes;
+// module.exports = seedRecipes;
