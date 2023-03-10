@@ -18,7 +18,7 @@ const recipesData = [
     style_id: 1,
   },
   {
-    name: "Burger",
+    name: 'Burger',
     author:"Ummmm", 
     instructions:"Cokka da meata",
     ingredients: "Sass",

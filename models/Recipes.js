@@ -22,18 +22,26 @@ recipes.init(
       allowNull: false,
       },
     instructions: {
-      type: DataTypes.VARCHAR(65535),
+      type: DataTypes.STRING,
       allowNull: false,
     },
     ingredients: {
-        type: DataTypes.VARCHAR(65535),
+        type: DataTypes.STRING,
         allowNull: false,
     },
     category_id: {
       type: DataTypes.INTEGER,
+      references: {
+        model: 'category',
+        key: 'id',
+      },
     },
     style_id: {
       type: DataTypes.INTEGER,
+      references: {
+        model: 'style',
+        key: 'id',
+      },
     }
   },
   {
