@@ -1,11 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection');
+// const bcrypt = require('bcrypt');
+const sequelize = require('../config/connection.js');
 
-class category extends Model {}
+class Category extends Model {}
 
 
-category.init(
+Category.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -14,12 +14,10 @@ category.init(
       autoIncrement: true,
     },
     category_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+      type: DataTypes.STRING
+    }
   },
   {
-
     sequelize,
     timestamps: false,
     freezeTableName: true,
@@ -28,4 +26,4 @@ category.init(
   }
 );
 
-module.exports = category;
+module.exports = Category;

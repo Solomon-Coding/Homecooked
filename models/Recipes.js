@@ -2,32 +2,32 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class recipes extends Model {}
+class Recipes extends Model {}
 
 
-recipes.init(
+Recipes.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     author: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
       },
     instructions: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     ingredients: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
     },
     category_id: {
       type: DataTypes.INTEGER,
@@ -42,7 +42,14 @@ recipes.init(
         model: 'style',
         key: 'id',
       },
-    }
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
   },
   {
     hooks: {
@@ -59,4 +66,4 @@ recipes.init(
   }
 );
 
-module.exports = recipes;
+module.exports = Recipes;

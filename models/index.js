@@ -8,14 +8,14 @@ const Category = require('./Category');
 Recipes.belongsTo(Category,
     {
       foreignKey: 'category_id',
-      onDelete: 'CASCADE',
+      onDelete: 'CASCADE'
     }
   );
   
   // Every category can refer to many recipe's
   Category.hasMany(Recipes,
     {
-      foreignKey: 'category_id',
+      foreignKey: 'category_id'
     }
   );
   
@@ -23,14 +23,14 @@ Recipes.belongsTo(Category,
   Recipes.belongsTo(Style,
     {
       foreignKey: 'style_id',
-      onDelete: 'CASCADE',
+      onDelete: 'CASCADE'
     }
   );
 
 // Every style can refer to many recipe's
 Style.hasMany(Recipes,
     {
-      foreignKey: 'style_id',
+      foreignKey: 'style_id'
     }
   );
 
