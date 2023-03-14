@@ -7,7 +7,7 @@
 
         <button>Add recipes</button>
 
-        <button>Edith recipes</button>
+        <button>Edit recipes</button>
       </div>
 
     </div>
@@ -21,9 +21,12 @@
 
         <div class="d-flex row  justify-content-center m-2 rep-list ">
           <ul>
+            {{#each recipe as |recipes|}}
             <li type="button">
-              I am list
+              {{recipes.name}}
+              <a>link here</a>
             </li>
+            {{/each}}
           </ul>
         </div>
       </div>
