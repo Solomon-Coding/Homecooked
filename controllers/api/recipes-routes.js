@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const Recipes = require('../../models/Recipes');
+//const withAuth = require('../../utils/auth')
+const withAuth = require('../../utils/auth');
 
-
-router.get('/', async (req, res) => {
+router.get('/', withAuth ,async (req, res) => {
   const recipesData = await Recipes.findAll().catch((err) => { 
       res.json(err);
     });

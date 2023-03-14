@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto ', sans-serif
+  font-family: 'Roboto ', sans-serif;
 }
 
 div button {
@@ -24,6 +24,15 @@ div button {
 div button:hover {
   color: white;
   background-color: rgb(65, 62, 59);
+}
+
+.logout-bt {
+  color: aliceblue;
+  font-size: 120%;
+}
+
+.logout-bt:hover {
+  background-color: rgb(233, 170, 88);
 }
 
 .recipes {
@@ -47,17 +56,88 @@ li:hover {
 
 rep-list {
   height: fit-content;
-
 }
 
 header {
-   color: rgb(255, 255, 255);
-   background-color: rgb(17, 15, 29);
+  color: rgb(255, 255, 255);
+  background-color: rgb(17, 15, 29);
+
+}
+
+header h1 {
+  font-size: 60px;
 }
 
 
-.logo{
+.logo {
   font-size: 600%;
   opacity: 0.4;
+} 
+
+
+input{
+  width: 90%;
+  border: none;
+  padding: 10px;
+  outline: none;
+  border-radius: 50px;
+  background-color: rgb(244, 204, 152);
+  display: inline-block;
+  float: left;
+
 }
 
+
+label{
+  display: inline-block;
+  float: left ;
+  clear: left;
+  width: 250px;
+  text-align: right;
+  color: aliceblue;
+  font-size: 24px;
+
+}
+
+
+.login-bg{
+  background-color: rgb(95, 58, 10);
+}
+
+.login-in{
+  background-color: rgb(162, 97, 12);
+}
+
+@media screen and (max-width: 1000px) {
+  .logo{
+    font-size: 200%;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .logo{
+    font-size: 200%;
+  }
+
+  header h1 {
+    font-size: 18px;
+  }
+
+  
+  div button{
+    font-size: 8px;
+  }
+
+  .logo{
+    font-size: 90%;
+  }
+
+
+  header{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+
+}
