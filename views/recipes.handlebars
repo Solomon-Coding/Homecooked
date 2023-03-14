@@ -1,70 +1,35 @@
-<div class="recipe-card">
-  <div class="recipe-card-header">
-    {{recipe_name}}
-  </div>
-  <div class="card-body">
-    <p>
-      author:
-      {{author}}
-    </p>
-    <p>
-      instructions:
-      {{instructions}}
-    </p>
-    <p>
-      ingredients:
-      {{ingredients}}
-    </p>
+<div >
+  <div class='row' style="background-color: rgb(132, 75, 9);">
+
+    <div class="col-2 vh-100" style="border: 1px solid; background-color: rgb(241, 186, 103);">
+      <div class=" mt-5  d-flex row g-2">
+        <button>My recipes</button>
+
+        <button>Add recipes</button>
+
+        <button>Edit recipes</button>
+      </div>
+
+    </div>
+
+    <div class="col-10 vh-100  d-flex justify-content-center"
+      style="border: 1px solid; height: 110px; overflow-y: scroll; ">
+
+      <div class=" text-center pt-2  mt-5 bg-light recipes ">
+        <h1>My Recipes</h1>
+        <hr>
+
+        <div class="d-flex row  justify-content-center m-2 rep-list ">
+          <ul>
+            {{#each recipe as |recipes|}}
+            <li type="button">
+              {{recipes.name}}
+              <a>link here</a>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
-<!-- This is the form for updating a dish. According to MVC framework, what is this form responsible for? -->
-<!-- This form is responsible for the UI logic, or the components in the View that the user will interact with. -->
-<!--What isn't it responsible for? -->
-<!--It is not responsible for data-related logic, requests, or business-logic. -->
-
-<div class="edit-recipe-container">
-  <h2>
-    Update recipe
-  </h2>
-  <form class="edit-recipe-form">
-    <label for="recipe_name">
-      recipe Name:
-    </label>
-    <br />
-    <textarea id="recipe_name" name="recipe_name" rows="1" cols="1">
-      {{recipe_name}}
-    </textarea>
-    <br />
-    <label for="author">
-      author:
-    </label>
-    <br />
-    <textarea id="author" name="author" rows="1" cols="1">
-      {{author}}
-    </textarea>
-    <br />
-    <label for="instructions">
-      instructions:
-    </label>
-    <br />
-    <textarea id="instructions" name="instructions" rows="15" cols="5">
-      {{instructions}}
-    </textarea>
-    <br />
-    <label for="ingredients">
-      ingredients:
-    </label>
-    <br />
-    <textarea id="ingredients" name="ingredients" rows="30" cols="5">
-      {{instructions}}
-    </textarea>
-    <br />
-    
-    <br />
-    <button type="submit" value="Submit">
-      Submit
-    </button>
-  </form>
-</div>
-<script src="edit recipe js, link this later"></script>
