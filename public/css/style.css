@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto ', sans-serif
+}
+
+div button {
+  border: none;
+  background-color: rgb(255, 0, 157);
+  border-radius: 20px;
+  font-size: 22px;
+  outline: none;
+  padding: 4%;
+
+}
+
+div button:hover {
+  color: white;
+  background-color: rgb(65, 62, 59);
+}
+
+.recipes {
+  height: fit-content;
+  width: 50%;
+}
+
+
+li {
+  background-color: rgb(237, 191, 130);
+  list-style: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+li:hover {
+  background-color: rgb(174, 117, 228);
+}
+
+rep-list {
+  height: fit-content;
+
+}
