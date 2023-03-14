@@ -1,21 +1,20 @@
-<div class="dish-card">
-  <div class="dish-card-header">
-    {{dish_name}}
+<div class="recipe-card">
+  <div class="recipe-card-header">
+    {{recipe_name}}
   </div>
   <div class="card-body">
     <p>
-      Description:
-      {{description}}
+      author:
+      {{author}}
     </p>
     <p>
-      Guest:
-      {{guest_name}}
+      instructions:
+      {{instructions}}
     </p>
-    {{#if has_nuts}}
-      <p class="has-nuts">
-        Contains Nuts
-      </p>
-    {{/if}}
+    <p>
+      ingredients:
+      {{ingredients}}
+    </p>
   </div>
 </div>
 
@@ -24,44 +23,48 @@
 <!--What isn't it responsible for? -->
 <!--It is not responsible for data-related logic, requests, or business-logic. -->
 
-<div class="edit-dish-container">
+<div class="edit-recipe-container">
   <h2>
-    Update Dish
+    Update recipe
   </h2>
-  <form class="edit-dish-form">
-    <label for="dish_name">
-      Dish Name:
+  <form class="edit-recipe-form">
+    <label for="recipe_name">
+      recipe Name:
     </label>
     <br />
-    <textarea id="dish_name" name="dish_name" rows="2" cols="30">
-      {{dish_name}}
+    <textarea id="recipe_name" name="recipe_name" rows="1" cols="1">
+      {{recipe_name}}
     </textarea>
     <br />
-    <label for="description">
-      Description:
+    <label for="author">
+      author:
     </label>
     <br />
-    <textarea id="description" name="description" rows="5" cols="30">
-      {{description}}
+    <textarea id="author" name="author" rows="1" cols="1">
+      {{author}}
     </textarea>
     <br />
-    <label for="guest_name">
-      Guest Name:
+    <label for="instructions">
+      instructions:
     </label>
     <br />
-    <textarea id="guest_name" name="guest_name" rows="2" cols="30">
-      {{guest_name}}
+    <textarea id="instructions" name="instructions" rows="15" cols="5">
+      {{instructions}}
     </textarea>
     <br />
-    <br />
-    <input type="checkbox" id="has_nuts" name="has_nuts" value="true" />
-    <label for="has_nuts">
-      Check box if this dish contains nuts
+    <label for="ingredients">
+      ingredients:
     </label>
+    <br />
+    <textarea id="ingredients" name="ingredients" rows="30" cols="5">
+      {{instructions}}
+    </textarea>
+    <br />
+    
     <br />
     <button type="submit" value="Submit">
       Submit
     </button>
   </form>
 </div>
-<script src="/js/edit-dish.js"></script>
+<script src="edit recipe js, link this later"></script>
