@@ -1,6 +1,18 @@
 const router = require('express').Router();
 const Recipes = require('../../models/Recipes');
 
+
+router.get('/', async (req, res) => {
+  const recipesData = await Recipes.findAll().catch((err) => { 
+      res.json(err);
+    });
+      const recipes = recipesData.map((dish) => dish.get({ plain: true }));
+      res.render('recipes', { recipes });
+    });
+
+
+
+
 // route to create/add a recipes using async/await
 router.post('/', async (req, res) => {
   try { 
@@ -18,6 +30,9 @@ router.post('/', async (req, res) => {
   res.status(400).json(err);
 }
 });
+
+
+
 
 
 module.exports = router;

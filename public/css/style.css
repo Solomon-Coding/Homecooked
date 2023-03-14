@@ -55,5 +55,9 @@ header {
    background-color: rgb(17, 15, 29);
 }
 
- 
+
+.logo{
+  font-size: 600%;
+  opacity: 0.4;
+}
 
