@@ -72,10 +72,10 @@ header h1 {
 .logo {
   font-size: 600%;
   opacity: 0.4;
-} 
+}
 
 
-input{
+input {
   width: 90%;
   border: none;
   padding: 10px;
@@ -87,31 +87,32 @@ input{
 }
 
 
-label{
+label {
   display: inline-block;
   text-align: right;
   color: aliceblue;
   font-size: 24px;
+  margin-bottom: 1px;
 }
 
 
-.login-bg{
+.login-bg {
   background-color: rgb(95, 58, 10);
 }
 
-.login-in{
+.login-in {
   background-color: rgb(175, 102, 6);
 }
 
 @media screen and (max-width: 1000px) {
-  .logo{
+  .logo {
     font-size: 200%;
   }
 }
 
 
 @media screen and (max-width: 600px) {
-  .logo{
+  .logo {
     font-size: 200%;
   }
 
@@ -119,17 +120,17 @@ label{
     font-size: 18px;
   }
 
-  
-  div button{
+
+  div button {
     font-size: 8px;
   }
 
-  .logo{
+  .logo {
     font-size: 90%;
   }
 
 
-  header{
+  header {
     margin-left: 10px;
     margin-right: 10px;
   }
