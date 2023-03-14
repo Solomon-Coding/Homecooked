@@ -83,20 +83,15 @@ input{
   border-radius: 50px;
   background-color: rgb(244, 204, 152);
   display: inline-block;
-  float: left;
 
 }
 
 
 label{
   display: inline-block;
-  float: left ;
-  clear: left;
-  width: 250px;
   text-align: right;
   color: aliceblue;
   font-size: 24px;
-
 }
 
 
@@ -105,7 +100,7 @@ label{
 }
 
 .login-in{
-  background-color: rgb(162, 97, 12);
+  background-color: rgb(175, 102, 6);
 }
 
 @media screen and (max-width: 1000px) {
