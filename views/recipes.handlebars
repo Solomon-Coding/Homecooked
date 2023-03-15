@@ -19,9 +19,9 @@
         <hr>
 
         <div class="d-flex row  justify-content-center m-2 rep-list ">
-          <ul>
+          <ul id="recipeList">
             {{#each recipeList as |recipe|}}
-            <li id="individualRecipe" type="button">
+            <li data-rid={{recipe.id}} id="individualRecipe" type="button">
               {{recipe.name}}
             </li>
 

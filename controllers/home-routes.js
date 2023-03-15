@@ -3,27 +3,6 @@ const withAuth = require('../utils/auth');
 const { Recipes, Category, Style, User } = require('../models');
 
 
-// // Version 1
-// router.get('/', withAuth, (req, res) => {
-//     console.log('HOME');
-//     res.render('home', {
-//         loggedIn: req.session.loggedIn
-//     });
-// });
-
-// router.get('/login', (req, res) => {
-//     console.log('LOGIN');
-//     if (req.session.loggedIn) {
-//         res.redirect('/');
-//         return;
-//     }
-
-//     res.render('login');
-// });
-
-// module.exports = router;
-
-// Version 2
 router.get('/', withAuth, async (req, res) => {
     try {
         const recipeData = await Recipes.findAll()
@@ -47,6 +26,7 @@ router.get('/recipes', withAuth, async (req, res) => {
       const recipeList = recipeData.map((recipes) =>
       recipes.get({plain: true})
       );
+      console.log('RECIPES');
       res.render('recipes', {
           recipeList,
           loggedIn: req.session.loggedIn
@@ -60,32 +40,20 @@ router.get('/recipes', withAuth, async (req, res) => {
 router.get('/recipes/:id', withAuth, async (req, res) => {
   try {
     const dbRecipeData = await Recipes.findByPk(req.params.id, {
-      // include: [
-      //   // {
-      //   //   model: Category,
-      //   //   attributes: [
-      //   //     'id',
-      //   //     'category_name',
-      //   //   ],
-      //   // },
-      //   // {
-      //   //   model: Style,
-      //   //   attributes: [
-      //   //     'id',
-      //   //     'style_name',
-      //   //   ],
-      //   // },
-      //   // {
-      //   //   model: User,
-      //   //   attributes: [
-      //   //     'id',
-      //   //     'name',
-      //   //     'email',
-      //   //   ],
-      //   // },
-      // ],
+      include: [
+        {
+          model: Category
+        },
+        {
+          model: Style
+        },
+        {
+          model: User,
+        },
+      ]
     });
-    console.log(dbRecipeData)
+    // console.log(dbRecipeData)
+    console.log(dbRecipeData===null);
     const individualRecipe = dbRecipeData.get({ plain: true });
     res.render('viewRecipe', {
       individualRecipe,
