@@ -5,7 +5,8 @@
     "instructions":"Cokka da meata",
     "ingredients": "Sass",
     "category_id": 2,
-    "style_id": 1
+    "style_id": 1,
+    "user_id": 1
   },
   {
     "name": "Burger",
