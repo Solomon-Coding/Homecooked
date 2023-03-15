@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 class Recipes extends Model {}
@@ -20,14 +20,14 @@ Recipes.init(
     author: {
       type: DataTypes.STRING,
       allowNull: false
-      },
+    },
     instructions: {
       type: DataTypes.STRING,
       allowNull: false
     },
     ingredients: {
-        type: DataTypes.STRING,
-        allowNull: false
+      type: DataTypes.STRING,
+      allowNull: false
     },
     category_id: {
       type: DataTypes.INTEGER,
