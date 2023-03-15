@@ -34,6 +34,22 @@ Style.hasMany(Recipes,
     }
   );
 
+  // Every user can refer to many recipe's
+User.hasMany(Recipes,
+  {
+    foreignKey: 'user_id'
+  }
+);
+
+  
+// Every recipe falls within a particular food style
+Recipes.belongsTo(User,
+  {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+  }
+);
+
 module.exports = {
     User,
     Recipes,
