@@ -1,0 +1,33 @@
+<div>
+  <div class='row vh-100' style="background-color: rgb(132, 75, 9);">
+
+    <div class="col-2 vh-100" style=" background-color: rgb(241, 186, 103);">
+      <div class=" mt-5  d-flex row g-2">
+        <button id="view-recipes" type="button">My recipes</button>
+
+        <button>Add recipes</button>
+
+        <button>Edit recipes</button>
+      </div>
+
+    </div>
+    {{!-- break --}}
+    <div class="card text-center recipes" style="margin-left: auto; margin-right: auto; margin-top: 5%; height: fit-content ;">
+      <div class="card-header">
+        <h1>Recipe</h1>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"> Title place holder{{recipes.name}}</h5>
+        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. In dolor necessitatibus consequuntur officia deserunt itaque, hic amet quasi non dignissimos eaque facere, veniam adipisci, numquam laboriosam nobis mollitia dolorem odio!</p>
+        <a href="#" class="btn mx-2 btn-danger">Delete</a>
+        <a href="#" class="btn btn-danger" style="background-color: rgb(139, 90, 29); border: 1px solid rgb(82, 45, 8) ">Edit</a>
+      
+      </div>
+      <div class="card-footer text-muted">
+        <button style="padding: 10px; background-color:rgb(174, 112, 31)">Share</button>
+      </div>
+    </div>
+    {{!-- break --}}
+  </div>
+</div>
+</div>
