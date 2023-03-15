@@ -1,6 +1,12 @@
-const test = document.getElementById("view-recipes")
-function toRecipes(){
-    document.location.href = "/recipes"
+const viewRecipesEl = document.getElementById("view-recipes")
+const individualRecipeEl = document.getElementById("individualRecipe")
 
+function toAllRecipes(){
+    document.location.href = "/recipes"
 }
-test.addEventListener("click", toRecipes)
+viewRecipesEl.addEventListener("click", toAllRecipes);
+
+function toRecipe(){
+    document.location.href = "/recipes/:id"
+}
+individualRecipeEl.addEventListener("click", toRecipe)

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const { Recipes, Category, Style } = require('../models');
+const { Recipes, Category, Style, User } = require('../models');
 
 
 // // Version 1
@@ -47,7 +47,6 @@ router.get('/recipes', withAuth, async (req, res) => {
       const recipeList = recipeData.map((recipes) =>
       recipes.get({plain: true})
       );
-      console.log(recipeList.length);
       res.render('recipes', {
           recipeList,
           loggedIn: req.session.loggedIn
@@ -58,6 +57,46 @@ router.get('/recipes', withAuth, async (req, res) => {
     }
 });
 
+router.get('/recipes/:id', withAuth, async (req, res) => {
+  try {
+    const dbRecipeData = await Recipes.findByPk(req.params.id, {
+      // include: [
+      //   // {
+      //   //   model: Category,
+      //   //   attributes: [
+      //   //     'id',
+      //   //     'category_name',
+      //   //   ],
+      //   // },
+      //   // {
+      //   //   model: Style,
+      //   //   attributes: [
+      //   //     'id',
+      //   //     'style_name',
+      //   //   ],
+      //   // },
+      //   // {
+      //   //   model: User,
+      //   //   attributes: [
+      //   //     'id',
+      //   //     'name',
+      //   //     'email',
+      //   //   ],
+      //   // },
+      // ],
+    });
+    console.log(dbRecipeData)
+    const individualRecipe = dbRecipeData.get({ plain: true });
+    res.render('viewRecipe', {
+      individualRecipe,
+      loggedIn: req.session.loggedIn
+  });
+
+  } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+});
 
 
 // // GET one gallery
