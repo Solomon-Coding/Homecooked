@@ -1,5 +1,5 @@
 {
-  "name": "glowing-sniffle",
+  "name": "Homecooked",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -10,9 +10,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/justindevs/glowing-sniffle.git"
+    "url": "git+https://github.com/Solomon-Coding/Homecooked.git"
   },
-  "author": "Justin Gottschalk",
+  "author": "Solomon Vana",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.0",
@@ -29,7 +29,7 @@
     "nodemon": "^2.0.21"
   },
   "bugs": {
-    "url": "https://github.com/justindevs/glowing-sniffle/issues"
+    "url": "https://github.com/Solomon-Coding/Homecooked/issues"
   },
-  "homepage": "https://github.com/justindevs/glowing-sniffle#readme"
+  "homepage": "https://github.com/Solomon-Coding/Homecooked#readme"
 }
