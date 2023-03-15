@@ -37,34 +37,6 @@ router.get('/recipes', withAuth, async (req, res) => {
     }
 });
 
-// router.get('/recipes/:id', withAuth, async (req, res) => {
-//   try {
-//     const dbRecipeData = await Recipes.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: Category,
-//         },
-//         {
-//           model: Style,
-//         },
-//         {
-//           model: User,
-//         },
-//       ]
-//     });
-//     // console.log(dbRecipeData)
-//     console.log(dbRecipeData===null);
-//     const individualRecipe = dbRecipeData.get({ plain: true });
-//     res.render('viewRecipe-copy', {
-//       individualRecipe,
-//       loggedIn: req.session.loggedIn
-//   });
-//   } catch (err) {
-//       console.log(err);
-//       res.status(500).json(err);
-//     }
-// });
-
 router.get('/recipes/:id', withAuth, async (req, res) => {
   try {
     const dbRecipeData = await Recipes.findByPk(req.params.id, {
@@ -98,62 +70,42 @@ router.get('/recipes/:id', withAuth, async (req, res) => {
   }
 });
 
+// delete recipe route
+
+router.delete('/recipes/:id', withAuth, async (req, res) => {
+  try {
+    const recipe = await Recipes.findByPk(req.params.id);
+
+    if (!recipe) {
+      return res.status(404).send('Recipe not found');
+    }
+
+    if (recipe.userId !== req.session.userId) {
+      return res.status(403).send('You are not authorized to delete this recipe');
+    }
+
+    await recipe.destroy();
+
+    res.status(200).send('Recipe deleted successfully');
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Internal Server Error');
+  }
+});
 
 
 
 
 
-// // GET one gallery
-// router.get('/gallery/:id', async (req, res) => {
-//   // If the user is not logged in, redirect the user to the login page
-//   if (!req.session.loggedIn) {
-//     res.redirect('/login');
-//   } else {
-//     // If the user is logged in, allow them to view the gallery
-//     try {
-//       const dbGalleryData = await Gallery.findByPk(req.params.id, {
-//         include: [
-//           {
-//             model: Painting,
-//             attributes: [
-//               'id',
-//               'title',
-//               'artist',
-//               'exhibition_date',
-//               'filename',
-//               'description',
-//             ],
-//           },
-//         ],
-//       });
-//       const gallery = dbGalleryData.get({ plain: true });
-//       res.render('gallery', { gallery, loggedIn: req.session.loggedIn });
-//     } catch (err) {
-//       console.log(err);
-//       res.status(500).json(err);
-//     }
-//   }
-// });
 
-// // GET one painting
-// router.get('/painting/:id', async (req, res) => {
-//   // If the user is not logged in, redirect the user to the login page
-//   if (!req.session.loggedIn) {
-//     res.redirect('/login');
-//   } else {
-//     // If the user is logged in, allow them to view the painting
-//     try {
-//       const dbPaintingData = await Painting.findByPk(req.params.id);
 
-//       const painting = dbPaintingData.get({ plain: true });
 
-//       res.render('painting', { painting, loggedIn: req.session.loggedIn });
-//     } catch (err) {
-//       console.log(err);
-//       res.status(500).json(err);
-//     }
-//   }
-// });
+
+
+
+
+
+
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
