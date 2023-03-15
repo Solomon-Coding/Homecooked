@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const Recipes = require('../../models/Recipes');
-//const withAuth = require('../../utils/auth')
 const withAuth = require('../../utils/auth');
 
 router.get('/', withAuth ,async (req, res) => {
@@ -10,8 +9,6 @@ router.get('/', withAuth ,async (req, res) => {
       const recipes = recipesData.map((dish) => dish.get({ plain: true }));
       res.render('recipes', { recipes });
     });
-
-
 
 
 // route to create/add a recipes using async/await
