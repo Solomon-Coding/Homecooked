@@ -6,7 +6,7 @@ router.get('/', withAuth ,async (req, res) => {
   const recipesData = await Recipes.findAll().catch((err) => { 
       res.json(err);
     });
-      const recipes = recipesData.map((dish) => dish.get({ plain: true }));
+      const recipes = recipesData.map((recipe) => recipe.get({ plain: true }));
       res.render('recipes', { recipes });
     });
 
