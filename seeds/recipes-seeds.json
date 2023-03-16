@@ -1,17 +1,16 @@
 [
   {
     "name": "Burger",
-    "author":"Ummmm", 
-    "instructions":"Cokka da meata",
-    "ingredients": "Sass",
-    "category_id": 2,
-    "style_id": 1,
-    "user_id": 1
+    "author":"Solomon Vana", 
+    "instructions":"First mix the ground beef with the salt and pepper. Then, form the mixture into patties. Next, melt the butter in a pan and add the paddies. Cook to desired level and serve. Makes 4 patties",
+    "ingredients": "1 lb ground beef, 1 tsp salt, 1 tsp pepper, 1 tbsp butter",
+    "category_id": 1,
+    "style_id": 1
   },
   {
-    "name": "Burger",
+    "name": "Beef Burger",
     "author":"Ummmm", 
-    "instructions":"Cokka da meata",
+    "instructions":"Cook it until it's cooked",
     "ingredients": "Sass",
     "category_id": 2,
     "style_id": 1
