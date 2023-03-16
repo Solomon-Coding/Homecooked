@@ -3,7 +3,6 @@ const sequelize = require('../config/connection');
 
 class Recipes extends Model {}
 
-
 Recipes.init(
   {
     id: {
