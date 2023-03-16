@@ -5,13 +5,13 @@ const { Recipes, Category, Style, User } = require('../models');
 // GET route for the home page
 router.get('/', withAuth, async (req, res) => {
     try {
-        const recipeData = await Recipes.findAll()
-        const recipeList = recipeData.map((recipes) =>
-        recipes.get({plain: true})
-        );
+        // const recipeData = await Recipes.findAll()
+        // const recipeList = recipeData.map((recipes) =>
+        // recipes.get({plain: true})
+        // );
         // console.log('HOME');
         res.render('home', {
-            recipeList,
+            // recipeList,
             loggedIn: req.session.loggedIn
         });
     } catch (err) {
