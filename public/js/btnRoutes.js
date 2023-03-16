@@ -1,9 +1,15 @@
+// const homeEl = document.getElementById("home-page")
+// const viewRecipesEl = document.getElementsByClassName("view-recipes");
 const viewRecipesEl = document.getElementById("view-recipes");
 const individualRecipeEl = document.getElementById("recipeList");
 const addRecipeEl = document.getElementById("add-recipe");
 const editRecipeEl = document.getElementById("edit-recipe");
 const deletebtn = document.getElementById('delete-btn');
 
+// function toHome() {
+//     document.location.href = "/"
+// }
+// homeEl.addEventListener("click", toHome);
 
 function toAllRecipes() {
     document.location.href = "/recipes"
