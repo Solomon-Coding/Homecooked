@@ -15,8 +15,8 @@ function toRecipe(e) {
 }
 individualRecipeEl.addEventListener("click", toRecipe)
 
-function addRecipe(e) {
-    document.location.href = `/addRecipes`;
+function addRecipe() {
+    document.location.href = `/addRecipe`;
 }
 addrecipeEl.addEventListener("click", addRecipe)
 

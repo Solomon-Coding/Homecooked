@@ -9,7 +9,7 @@
 
     </div>
 
-    <div class="col-10 vh-100  d-flex justify-content-center" style=" height: 110px; overflow-y:scroll;">
+    {{!-- <div class="col-10 vh-100  d-flex justify-content-center" style=" height: 110px; overflow-y:scroll;">
 
       <div class=" text-center pt-2  mt-5 bg-light recipes ">
         <h1>My Recipes</h1>
@@ -25,10 +25,9 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div> --}}
   </div>
 </div>
-<script src="/js/viewRecipes.js"></script>
 
  <!-- This is the form for adding a new dish -->
   <div class="add-dish-container">
@@ -41,7 +40,7 @@
       </label>
       <br />
       <textarea id="dish_name" name="dish_name" rows="2" cols="30">
-      {{dish_name}}
+      {{!-- {{dish_name}} --}}
     </textarea>
       <br />
       <label for="description">
@@ -49,7 +48,7 @@
       </label>
       <br />
       <textarea id="description" name="description" rows="5" cols="30">
-      {{description}}
+      {{!-- {{description}} --}}
     </textarea>
       <br />
       <label for="guest_name">
@@ -57,15 +56,15 @@
       </label>
       <br />
       <textarea id="guest_name" name="guest_name" rows="2" cols="30">
-      {{guest_name}}
+      {{!-- {{guest_name}} --}}
     </textarea>
       <br />
       <br />
-      {{#if has_nuts}}
+      {{!-- {{#if has_nuts}}
       <input type="checkbox" id="has_nuts" name="has_nuts" checked />
       {{else}}
       <input type="checkbox" id="has_nuts" name="has_nuts" />
-      {{/if}}
+      {{/if}} --}}
       <label for="has_nuts">
         Check box if this dish contains nuts
       </label>

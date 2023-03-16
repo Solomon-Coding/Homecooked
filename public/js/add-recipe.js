@@ -6,11 +6,15 @@
     const guest_name = document.querySelector('#guest_name').value;
     // const has_nuts = document.querySelector('#has_nuts:checked') ? true : false;
   
-    const response = await fetch(`/api/recipe`, {
+    const response = await fetch(`/api/recipes`, {
       method: 'POST',
       body: JSON.stringify({
-        recipe_name,
-        description,
+        name,
+        author,
+        instructions,
+        ingredients,
+        category_id,
+        style_id,
       }),
       headers: {
         'Content-Type': 'application/json',
