@@ -72,11 +72,7 @@ router.get('/recipes/:id', withAuth, async (req, res) => {
 
 router.get('/addRecipe', withAuth, async (req, res) => {
   try {
-      // const recipeData = await Recipes.findAll()
-      // const recipeList = recipeData.map((recipes) =>
-      // recipes.get({plain: true})
-      // );
-      // console.log('RECIPES');
+      // console.log('ADD RECIPE');
       res.render('addRecipe', {
           loggedIn: req.session.loggedIn
       });
