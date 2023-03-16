@@ -9,7 +9,7 @@ router.get('/', withAuth, async (req, res) => {
         const recipeList = recipeData.map((recipes) =>
         recipes.get({plain: true})
         );
-        console.log('HOME');
+        // console.log('HOME');
         res.render('home', {
             recipeList,
             loggedIn: req.session.loggedIn
@@ -26,7 +26,7 @@ router.get('/recipes', withAuth, async (req, res) => {
       const recipeList = recipeData.map((recipes) =>
       recipes.get({plain: true})
       );
-      console.log('RECIPES');
+      // console.log('RECIPES');
       res.render('recipes', {
           recipeList,
           loggedIn: req.session.loggedIn
