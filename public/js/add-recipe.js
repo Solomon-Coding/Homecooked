@@ -1,18 +1,16 @@
-async function newFormHandler(event) {
+  async function newFormHandler(event) {
     event.preventDefault();
   
     const recipe_name = document.querySelector('#recipe_name').value;
     const description = document.querySelector('#description').value;
     const guest_name = document.querySelector('#guest_name').value;
-    const has_nuts = document.querySelector('#has_nuts:checked') ? true : false;
+    // const has_nuts = document.querySelector('#has_nuts:checked') ? true : false;
   
     const response = await fetch(`/api/recipe`, {
       method: 'POST',
       body: JSON.stringify({
         recipe_name,
         description,
-        guest_name,
-        has_nuts,
       }),
       headers: {
         'Content-Type': 'application/json',

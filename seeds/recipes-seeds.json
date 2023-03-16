@@ -22,5 +22,13 @@
     "ingredients": "1 box yellow cake mix, 2 eggs, 1 stick of melted margarine, 1 regular-sized bag of chocolate chips, 1 can sweetened condensed milk, 2 tbsp. melted margarine",
     "category_id": 7,
     "style_id": 1
+  },
+  {
+    "name": "Scones",
+    "author":"Britta Williams",
+    "instructions":"Stir together flour, powdered sugar, sugar, and salt. Cut shortening into these dry ingredients. Add in eggs, milk, and vanilla. Turn onto floured surface and shape into a 2-inch thick round. Cut into 6 pie-shaped pieces and place on greased & floured baking sheet. Bake at 375 degrees Fahrenheit for 15-20 minutes or until golden. Serve with butter and jam.",
+    "ingredients": "2 c. flour, 1 tbsp. powdered sugar, 1/4 c. sugar, 1/2 tsp. salt, 2/3 c. shortening, 2 eggs, 1/4 c. milk, 1 tsp. vanilla extract",
+    "category_id": 7,
+    "style_id": 2
   }
 ]
