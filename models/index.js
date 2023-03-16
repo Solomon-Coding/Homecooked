@@ -41,7 +41,6 @@ User.hasMany(Recipes,
   }
 );
 
-  
 // Every recipe falls within a particular food style
 Recipes.belongsTo(User,
   {
