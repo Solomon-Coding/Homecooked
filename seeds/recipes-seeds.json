@@ -8,19 +8,27 @@
     "style_id": 1
   },
   {
-    "name": "Beef Burger",
-    "author":"Ummmm", 
-    "instructions":"Cook it until it's cooked",
-    "ingredients": "Sass",
-    "category_id": 2,
+    "name": "Kidney Bean Hotdish",
+    "author":"Kelley Rooney",
+    "instructions":"Brown hamburger while cooking macaroni as directed on package. Drain both and mix together with remaining ingredients. Salt and pepper to taste and heat thoroughly.",
+    "ingredients": "1 lb. hamburger, 2 c. dry macaroni, 2 cans tomato soup, 2 cans kidney beans, 1/2 c. ketchup, salt & pepper",
+    "category_id": 6,
     "style_id": 1
-  },  
+  },
   {
-    "name": "Burger",
-    "author":"Ummmm", 
-    "instructions":"Cokka da meata",
-    "ingredients": "Sass",
-    "category_id": 3,
+    "name": "Fudge Bars",
+    "author":"Anne Hackenmueller",
+    "instructions":"Combine yellow cake mix, eggs, and melted stick of margarine. Press 2/3 of this mixture into greased 9x13 pan. Melt the chocolate chips, sweetened condensed milk, and 2 tbsp. of melted margarine and stir this until smooth. Pour this over the cake mixture in the pan. Take remaining 1/3 cake mixture and splotch over cake. Bake at 350 degrees Fahrenheit for 20 minutes.",
+    "ingredients": "1 box yellow cake mix, 2 eggs, 1 stick of melted margarine, 1 regular-sized bag of chocolate chips, 1 can sweetened condensed milk, 2 tbsp. melted margarine",
+    "category_id": 7,
+    "style_id": 1
+  },
+  {
+    "name": "Scones",
+    "author":"Britta Williams",
+    "instructions":"Stir together flour, powdered sugar, sugar, and salt. Cut shortening into these dry ingredients. Add in eggs, milk, and vanilla. Turn onto floured surface and shape into a 2-inch thick round. Cut into 6 pie-shaped pieces and place on greased & floured baking sheet. Bake at 375 degrees Fahrenheit for 15-20 minutes or until golden. Serve with butter and jam.",
+    "ingredients": "2 c. flour, 1 tbsp. powdered sugar, 1/4 c. sugar, 1/2 tsp. salt, 2/3 c. shortening, 2 eggs, 1/4 c. milk, 1 tsp. vanilla extract",
+    "category_id": 7,
     "style_id": 2
   }
 ]
