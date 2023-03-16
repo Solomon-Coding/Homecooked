@@ -1,6 +1,7 @@
 const viewRecipesEl = document.getElementById("view-recipes");
 const individualRecipeEl = document.getElementById("recipeList");
-const addrecipeEl = document.getElementById("add-recipe");
+const addRecipeEl = document.getElementById("add-recipe");
+const editRecipeEl = document.getElementById("edit-recipe");
 const deletebtn = document.getElementById('delete-btn');
 
 
@@ -18,7 +19,13 @@ individualRecipeEl.addEventListener("click", toRecipe)
 function addRecipe() {
     document.location.href = `/addRecipe`;
 }
-addrecipeEl.addEventListener("click", addRecipe)
+addRecipeEl.addEventListener("click", addRecipe)
+
+function editRecipe(e) {
+    const btnId = e.target.dataset.rid;
+    document.location.href = `/editRecipe/${btnId}`;
+}
+editRecipeEl.addEventListener("click", editRecipe)
 
 function deleteRecipe(e) {
     const  btnId = e.target.dataset.rid;

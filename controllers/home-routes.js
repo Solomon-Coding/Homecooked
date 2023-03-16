@@ -2,7 +2,7 @@ const router = require('express').Router();
 const withAuth = require('../utils/auth');
 const { Recipes, Category, Style, User } = require('../models');
 
-
+// GET route for the home page
 router.get('/', withAuth, async (req, res) => {
     try {
         const recipeData = await Recipes.findAll()
@@ -20,6 +20,7 @@ router.get('/', withAuth, async (req, res) => {
       }
 });
 
+// GET route for the recipes page (displays all recipes)
 router.get('/recipes', withAuth, async (req, res) => {
   try {
       const recipeData = await Recipes.findAll()
@@ -37,6 +38,7 @@ router.get('/recipes', withAuth, async (req, res) => {
     }
 });
 
+// GET route for the recipe page (displays one recipe)
 router.get('/recipes/:id', withAuth, async (req, res) => {
   try {
     const dbRecipeData = await Recipes.findByPk(req.params.id, {
@@ -70,6 +72,7 @@ router.get('/recipes/:id', withAuth, async (req, res) => {
   }
 });
 
+// GET route for the addRecipe page
 router.get('/addRecipe', withAuth, async (req, res) => {
   try {
       // console.log('ADD RECIPE');
@@ -81,6 +84,42 @@ router.get('/addRecipe', withAuth, async (req, res) => {
       res.status(500).json(err);
     }
 });
+
+// GET route for the editRecipe page
+router.get('/recipes/:id', withAuth, async (req, res) => {
+  try {
+    const dbRecipeData = await Recipes.findByPk(req.params.id, {
+      include: [
+        {
+          model: Category,
+        },
+        {
+          model: Style,
+        },
+        {
+          model: User,
+        },
+      ]
+    });
+
+    if (!dbRecipeData) {
+      // If no recipe data is found, redirect to a 404 page or return an error message
+      return res.status(404).send('Recipe not found');
+    }
+
+    const editRecipe = dbRecipeData.get({ plain: true });
+
+    res.render('editRecipe', {
+      editRecipe,
+      loggedIn: req.session.loggedIn
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+
 // delete recipe route
 
 router.delete('/recipes/:id', withAuth, async (req, res) => {

@@ -1,10 +1,12 @@
   async function newFormHandler(event) {
     event.preventDefault();
   
-    const recipe_name = document.querySelector('#recipe_name').value;
-    const description = document.querySelector('#description').value;
-    const guest_name = document.querySelector('#guest_name').value;
-    // const has_nuts = document.querySelector('#has_nuts:checked') ? true : false;
+    const name = document.querySelector('#nameid').value;
+    const author = document.querySelector('#authorid').value;
+    const instructions = document.querySelector('#instructionsid').value;
+    const ingredients = document.querySelector('#ingredientsid').value;
+    const category_id = document.querySelector('#categoryid').value;
+    const style_id = document.querySelector('#styleid').value;
   
     const response = await fetch(`/api/recipes`, {
       method: 'POST',
