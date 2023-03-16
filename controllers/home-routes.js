@@ -60,7 +60,7 @@ router.get('/recipes/:id', withAuth, async (req, res) => {
 
     const individualRecipe = dbRecipeData.get({ plain: true });
 
-    res.render('viewRecipe-copy', {
+    res.render('viewRecipe', {
       individualRecipe,
       loggedIn: req.session.loggedIn
     });

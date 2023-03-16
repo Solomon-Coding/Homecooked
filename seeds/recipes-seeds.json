@@ -1,12 +1,11 @@
 [
   {
     "name": "Burger",
-    "author":"Ummmm", 
-    "instructions":"Cooking is a version of storytelling. Recipes, as well as other food writing, have been passed down for centuries—throughout generations and households, to friends of friends, to strangers in cookbooks learning to broaden their knowledge on different types of food around the world and open their minds (and taste buds). Tell your own story. Preface your recipe with a short intro that shows readers your personal relationship to this dish. For example, write why it’s important and what occasion it could be cooked/baked on. This is also a good section to state how many the recipe serves, the prep time, and the overall cook time. ",
-    "ingredients": "Sass",
-    "category_id": 2,
-    "style_id": 1,
-    "user_id": 1
+    "author":"Solomon Vana", 
+    "instructions":"First mix the ground beef with the salt and pepper. Then, form the mixture into patties. Next, melt the butter in a pan and add the paddies. Cook to desired level and serve. Makes 4 patties",
+    "ingredients": "1 lb ground beef, 1 tsp salt, 1 tsp pepper, 1 tbsp butter",
+    "category_id": 1,
+    "style_id": 1
   },
   {
     "name": "Beef Burger",
