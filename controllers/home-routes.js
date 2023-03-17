@@ -106,9 +106,7 @@ router.get('/recipes/:id', withAuth, async (req, res) => {
       // If no recipe data is found, redirect to a 404 page or return an error message
       return res.status(404).send('Recipe not found');
     }
-
     const editRecipe = dbRecipeData.get({ plain: true });
-
     res.render('editRecipe', {
       editRecipe,
       loggedIn: req.session.loggedIn
@@ -119,6 +117,18 @@ router.get('/recipes/:id', withAuth, async (req, res) => {
   }
 });
 
+// GET route for the addRecipe page
+router.get('/share', withAuth, async (req, res) => {
+  try {
+      // console.log('ADD RECIPE');
+      res.render('share', {
+          loggedIn: req.session.loggedIn
+      });
+  } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+});
 
 // delete recipe route
 

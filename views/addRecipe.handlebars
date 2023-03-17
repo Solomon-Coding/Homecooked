@@ -9,13 +9,14 @@
     </div>
 
     <div class="col-10 vh-100  d-flex justify-content-center" style=" height: 110px;">
-      {{!-- <h2>
-        Add a new recipe!
-      </h2> --}}
+
       <div style="display: flex;padding-top:150px; width: inherit;justify-content: space-evenly;">
         <div>
           <div class="add-recipe-container">
           <form class="new-recipe-form">
+                  <h2>
+        Add a new recipe!
+      </h2>
             <label for="recipe_name">
               Recipe Name:
             </label>
@@ -41,12 +42,6 @@
             style="font-size: 24px;" wrap=physical> {{ingredients}}</textarea>
             <br />
             <br />
-          </form>
-          </div>
-        </div>
-        <div>
-          <div class="add-recipe-container">
-            <form class="new-recipe-form">
               <label for="instructions">
                 Recipe Instructions:
               </label>
@@ -89,15 +84,13 @@
               </select>
               <br/>
               <br/>
+              <button type="submit" value="Submit">
+                Submit
+              </button>
             </form>
           </div>
         </div>
       </div>
-    </div>
-    <div style="display:flex;justify-content: center">
-            <button type="submit" value="Submit">
-      Submit
-    </button>
     </div>
   </div>
 </div>
