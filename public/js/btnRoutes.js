@@ -37,61 +37,9 @@ function deleteRecipe(e) {
     document.location.href = `/recipes/${btnId}`;
 }
 
-// Share recipe
-function shareRecipe() {
-    console.log("Clicked");
-    document.location.href = '/share';
-}
-shareRecipeEl.addEventListener("click", shareRecipe)
-
-
-
-// const individualRecipeEl = document.getElementById("recipeList");
-// const viewRecipesEl = document.getElementById("view-recipes");
-// const shareRecipeEl = document.getElementById("share-recipes");
-// const editRecipeEl = document.getElementById("edit-recipe");
-// const addRecipeEl = document.getElementById("add-recipe");
-// const deletebtn = document.getElementById('delete-btn');
-
-// // Functions that redirect the user on click.
-
-// // View one recipe
-// function toRecipe(e) {
-//     const btnId = e.target.dataset.rid;
-//     document.location.href = `/recipes/${btnId}`;
-// }
-// individualRecipeEl.addEventListener("click", toRecipe)
-
-// // View all recipes
-// function toAllRecipes() {
-//     document.location.href = "/recipes";
-// }
-// viewRecipesEl.addEventListener("click", toAllRecipes);
-
 // // Share recipe
 // function shareRecipe() {
-//     // const btnId = e.target.dataset.rid;
-//     // document.location.href = `/share/${btnId}`;
 //     console.log("Clicked");
 //     document.location.href = '/share';
 // }
 // shareRecipeEl.addEventListener("click", shareRecipe)
-
-// // Edit recipe
-// function editRecipe(e) {
-//     const btnId = e.target.dataset.rid;
-//     document.location.href = `/editRecipe/${btnId}`;
-// }
-// editRecipeEl.addEventListener("click", editRecipe)
-
-// // Add recipe
-// function addRecipe() {
-//     document.location.href = `/addRecipe`;
-// }
-// addRecipeEl.addEventListener("click", addRecipe)
-
-// // Delete recipe
-// function deleteRecipe(e) {
-//     const  btnId = e.target.dataset.rid;
-//     document.location.href = `/recipes/${btnId}`;
-// }

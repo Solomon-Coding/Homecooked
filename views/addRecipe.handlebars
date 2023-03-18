@@ -14,15 +14,16 @@
         <div>
           <div class="add-recipe-container">
           <form class="new-recipe-form">
-                  <h2>
-        Add a new recipe!
-      </h2>
+            <h2>
+              Add a new recipe!
+            </h2>
             <label for="recipe_name">
               Recipe Name:
             </label>
             <br />
             <textarea id="nameid" name="recipe_name" rows="1" 
-            cols="30" style="font-size: 24px;"> {{name}}</textarea>
+            cols="30" style="font-size: 24px;">
+            </textarea>
             <br />
             <br />
             <label for="author">
@@ -30,7 +31,8 @@
             </label>
             <br />
             <textarea id="authorid" name="author" rows="1" cols="30" 
-            style="font-size: 24px;"> {{author}}</textarea>
+            style="font-size: 24px;">
+            </textarea>
             <br />
             <br/>
             <label for="ingredients">
@@ -39,7 +41,8 @@
             <br/>
             <textarea id="ingredientsid" onInput="handleInput(event)" 
             name="ingredients" rows="5" cols="30" 
-            style="font-size: 24px;" wrap=physical> {{ingredients}}</textarea>
+            style="font-size: 24px;" wrap=physical>
+            </textarea>
             <br />
             <br />
               <label for="instructions">
@@ -48,7 +51,8 @@
               <br/>
               <textarea id="instructionsid" onInput="handleInput(event)" 
               name="instructions" rows="6" cols="30" 
-              style="font-size: 24px;" wrap=physical>{{instructions}}</textarea>
+              style="font-size: 24px;" wrap=physical>
+              </textarea>
               <br />
               <br />
               <label for="category">
@@ -65,7 +69,6 @@
                 <option style="font-size: 24px;" value=5>Lunch</option>
                 <option style="font-size: 24px;" value=6>Dinner</option>
                 <option style="font-size: 24px;" value=7>Desert</option>
-              {{category_id}}
               </select>
               <br/>
               <br/>
@@ -80,7 +83,6 @@
                 <option style="font-size: 24px;" value=2>French</option>
                 <option style="font-size: 24px;" value=3>Italian</option>
                 <option style="font-size: 24px;" value=4>Mexican</option>
-              {{style_id}}
               </select>
               <br/>
               <br/>
