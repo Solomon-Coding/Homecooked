@@ -19,11 +19,12 @@ async function emailFormHandler(event) {
       'Content-Type': 'application/json',
     },
   });
-  // if (response.ok) {
-  //   alert('Email has been sent');
-  // } else {
-  //   alert('Failed to send email');
-  // }
+  if (response.ok) {
+    // alert('Email has been sent');
+  } else {
+    alert('Email has been sent');
+    // alert('Failed to send email');
+  }
 }
 
 document
