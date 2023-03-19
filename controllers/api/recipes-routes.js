@@ -51,7 +51,7 @@ router.post('/send', async (req, res) => {
     
     // send mail with defined transport object
     const mailOptions = {
-      from: '"Homecooked" <solomonvana18@gmail.com>', // sender address
+      from: '"Homecooked" <homecooked@gmail.com>', // sender address
       to: `${req.body.recipient}`, // list of receivers
       subject: `${req.body.subject}`, // Subject line
       // text: "efv?", // plain text body
