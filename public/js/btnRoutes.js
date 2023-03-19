@@ -8,20 +8,20 @@ const addRecipeEl = document.getElementById("add-recipe");
 function toAllRecipes() {
     document.location.href = "/recipes"
 }
-viewRecipesEl.addEventListener("click", toAllRecipes);
+viewRecipesEl?.addEventListener("click", toAllRecipes);
 
 // View one recipe
 function toRecipe(e) {
     const btnId = e.target.dataset.rid;
     document.location.href = `/recipes/${btnId}`;
 }
-individualRecipeEl.addEventListener("click", toRecipe)
+individualRecipeEl?.addEventListener("click", toRecipe);
 
 // Add recipe
 function addRecipe() {
     document.location.href = `/addRecipe`;
 }
-addRecipeEl.addEventListener("click", addRecipe)
+addRecipeEl?.addEventListener("click", addRecipe);
 
 // Edit recipe
 function editRecipe(e) {
@@ -29,10 +29,11 @@ function editRecipe(e) {
     document.location.href = `/editRecipe/${btnId}`;
     // document.location.href = `/editRecipe/${btnId}/edit`;
 }
-editRecipeEl.addEventListener("click", editRecipe)
+editRecipeEl?.addEventListener("click", editRecipe);
 
-// Delete recipe
-function deleteRecipe(e) {
-    const  btnId = e.target.dataset.rid;
-    document.location.href = `/recipes/${btnId}`;
-}
+// // Delete recipe
+// function deleteRecipe(e) {
+//     const  btnId = e.target.dataset.rid;
+//     document.location.href = `/recipes/${btnId}`;
+// }
+// deletebtn?.addEventListener("click", editRecipe);
