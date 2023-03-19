@@ -5,12 +5,12 @@
       <div class=" mt-5  d-flex row g-2">
         <button id="view-recipes" type="button">Back</button>
 
-        <button type="button" class="btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Share</button>
+        <button type="button" class="btn-primary" data-toggle="modal" data-target="#share-recipes">Share</button>
       </div>
     </div>
 
    {{!-- MODAL --}}
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" 
+    <div class="modal fade" id="share-recipes" tabindex="-1" role="dialog" 
     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -21,30 +21,34 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
+            {{msg}}
+            <form class="emailForm" method="POST" action="send">
               <div class="form-group">
-                <label for="exampleFormControlInput1" style="color:black">Email Recipient</label>
+                <label for="emailRecipient" style="color:black">Email Recipient</label>
                 <br>
-                <input type="email" class="form-control" id="exampleFormControlInput1" 
+                <input type="email" class="form-control" id="emailRecipient" 
                 placeholder="name@example.com">
               </div>
               <br>
               <div class="form-group">
-                <label for="exampleFormControlTextarea1" style="color:black">Subject</label>
+                <label for="emailSubject" style="color:black">Subject</label>
                 <br>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                <textarea class="form-control" id="emailSubject" rows="1"></textarea>
               </div>
               <br>
               <div class="form-group">
-                <label for="exampleFormControlTextarea1" style="color:black">Message</label>
+                <label for="emailMessage" style="color:black">Message</label>
                 <br>
-                <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+                <textarea class="form-control" id="emailMessage" rows="3"></textarea>
               </div>
+              <button type="submit" value="submit" class="btn btn-primary">Send Email</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Send Email</button>
+            {{!-- <button type="submit" form="emailForm" class="btn btn-primary">Send Email</button> --}}
           </div>
         </div>
       </div>
@@ -68,3 +72,4 @@
 </div>
 </div>
 <script src="/js/btnRoutes.js"></script>
+<script src="/js/nodeMailer.js"></script>

@@ -117,41 +117,28 @@ router.get('/recipes/:id', withAuth, async (req, res) => {
   }
 });
 
-// GET route for the addRecipe page
-router.get('/share', withAuth, async (req, res) => {
-  try {
-      // console.log('ADD RECIPE');
-      res.render('share', {
-          loggedIn: req.session.loggedIn
-      });
-  } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-});
-
 // delete recipe route
 
-router.delete('/recipes/:id', withAuth, async (req, res) => {
-  try {
-    const recipe = await Recipes.findByPk(req.params.id);
+// router.delete('/recipes/:id', withAuth, async (req, res) => {
+//   try {
+//     const recipe = await Recipes.findByPk(req.params.id);
 
-    if (!recipe) {
-      return res.status(404).send('Recipe not found');
-    }
+//     if (!recipe) {
+//       return res.status(404).send('Recipe not found');
+//     }
 
-    if (recipe.userId !== req.session.userId) {
-      return res.status(403).send('You are not authorized to delete this recipe');
-    }
+//     if (recipe.userId !== req.session.userId) {
+//       return res.status(403).send('You are not authorized to delete this recipe');
+//     }
 
-    await recipe.destroy();
+//     await recipe.destroy();
 
-    res.status(200).send('Recipe deleted successfully');
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Internal Server Error');
-  }
-});
+//     res.status(200).send('Recipe deleted successfully');
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).send('Internal Server Error');
+//   }
+// });
 
 
 

@@ -1,37 +1,61 @@
-"use strict";
+// // Pull in needed information for the email
 const nodemailer = require("nodemailer");
 
-// async..await is not allowed in global scope, must use a wrapper
-async function main() {
-  // Generate test SMTP service account from ethereal.email
-  // Only needed if you don't have a real mail account for testing
-  let testAccount = await nodemailer.createTestAccount();
+async function emailFormHandler(event) {
+  event.preventDefault();
 
-  // create reusable transporter object using the default SMTP transport
-  let transporter = nodemailer.createTransport({
-    host: "smtp.ethereal.email",
-    port: 587,
-    secure: false, // true for 465, false for other ports
-    auth: {
-      user: testAccount.user, // generated ethereal user
-      pass: testAccount.pass, // generated ethereal password
+  // const emailRecipientEl = document.querySelector('#emailRecipient').value;
+  // const emailSubjectEl = document.querySelector('#emailSubject').value;
+  // const emailMessageEl = document.querySelector('#emailMessage').value;
+
+  const recipient = document.querySelector('#emailRecipient').value;
+  const subject = document.querySelector('#emailSubject').value;
+  const message = document.querySelector('#emailMessage').value;
+
+  const response = await fetch(`/api/recipes/send`,{
+    method: 'POST',
+    body:{
+      recipient,
+      subject,
+      message,
+    },
+    headers: {
+      'Content-Type': 'application/json',
     },
   });
-  // send mail with defined transport object
-  let info = await transporter.sendMail({
-    from: `${User.name} <${User.email}>`, // sender address
-    to: "bar@example.com, baz@example.com", // list of receivers
-    subject: "Hello ✔", // Subject line
-    text: "Hello world?", // plain text body
-    html: "<b>Hello world?</b>", // html body
-  });
-
-  console.log("Message sent: %s", info.messageId);
-  // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-
-  // Preview only available when sending through an Ethereal account
-  console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-  // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+  if (response.ok) {
+    alert('Message Sent');
+  } else {
+    alert('Failed');
+  }
 }
 
-main().catch(console.error);
+document
+  .querySelector('.emailForm')
+  .addEventListener('submit', emailFormHandler);
+
+
+// let transporter = nodemailer.createTransport({
+//   host: "mail.gmail.com",
+//   port: 587,
+//   secure: false, // true for 465, false for other ports
+//   auth: {
+//     user: 'solomonvana18@gmail.com', // generated ethereal user
+//     pass: 'Puweda73', // generated ethereal password
+//   },
+//   tls:{
+//     rejectUnauthorized:false
+//   }
+// });
+
+// // send mail with defined transport object
+// let info = await transporter.sendMail({
+//   from: '"Homecooked" <solomonvana18@gmail.com>', // sender address
+//   to: `${req.body.recipient}`, // list of receivers
+//   subject: `${req,body.subject}`, // Subject line
+//   text: "efv?", // plain text body
+//   html: `<b>${req,body.message}</b>`, // html body
+// });
+
+// console.log("Message sent: %s", info.messageId);
+// console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));

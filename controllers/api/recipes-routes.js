@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Recipes = require('../../models/Recipes');
+const nodemailer = require("nodemailer");
 // const withAuth = require('../../utils/auth');
 
 // router.get('/', withAuth ,async (req, res) => {
@@ -27,6 +28,39 @@ router.post('/', async (req, res) => {
 } catch (err) {
   res.status(400).json(err);
 }
+});
+
+router.post('/send', async (req, res) => {
+  console.log(req.body)
+//   try { 
+//     let transporter = nodemailer.createTransport({
+//       host: "mail.gmail.com",
+//       port: 587,
+//       secure: false, // true for 465, false for other ports
+//       auth: {
+//         user: 'solomonvana18@gmail.com', // generated ethereal user
+//         pass: 'Puweda73', // generated ethereal password
+//       },
+//       tls:{
+//         rejectUnauthorized:false
+//       }
+//     });
+    
+//     // send mail with defined transport object
+//     let info = await transporter.sendMail({
+//       from: '"Homecooked" <solomonvana18@gmail.com>', // sender address
+//       to: `${req.body.recipient}`, // list of receivers
+//       subject: `${req,body.subject}`, // Subject line
+//       text: "efv?", // plain text body
+//       html: `<b>${req,body.message}</b>`, // html body
+//     });
+    
+//     console.log("Message sent: %s", info.messageId);
+//     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+    
+// } catch (err) {
+//   res.status(400).json(err);
+// }
 });
 
 router.put('/:id', async (req, res) => {
