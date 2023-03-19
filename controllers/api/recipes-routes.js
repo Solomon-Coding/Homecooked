@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const Recipes = require('../../models/Recipes');
-const nodemailer = require("nodemailer");
+const Nodemailer = require("nodemailer");
+require('dotenv').config();
 // const withAuth = require('../../utils/auth');
 
 // router.get('/', withAuth ,async (req, res) => {
@@ -32,6 +33,12 @@ router.post('/', async (req, res) => {
 
 router.post('/send', (req, res) => {
   try { 
+    let nodemailer;
+    if (process.env.JAWSDB_URL) {
+      nodemailer = new Nodemailer(process.env.JAWSDB_URL);
+    } else {
+      nodemailer = new Nodemailer(process.env.password)
+    }
     const transporter = nodemailer.createTransport({
       service:"gmail",
       auth: {
@@ -39,19 +46,20 @@ router.post('/send', (req, res) => {
         pass: process.env.password,
       }
     });
-    
+  
     const mailOptions = {
       from: '"Homecooked" <homecooked@gmail.com>', // sender address
       to: `${req.body.recipient}`, // list of receivers
       subject: `${req.body.subject}`, // Subject line
       html: `${req.body.message}`, // html body
     };
+
     transporter.sendMail(mailOptions);
     console.log("Email sent")
     console.log("Message sent: %s", info.messageId);
-    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-    res.render("viewRecipe", {msg:'Email sent'});
-    res.status(200)
+    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info)); 
+  res.render("viewRecipe", {msg:'Email sent'});
+    res.status(200).end()
 } catch (err) {
   res.status(400).json(err);
 }
