@@ -6,7 +6,7 @@ async function emailFormHandler(event) {
   const recipient = document.querySelector('#emailRecipient').value;
   const subject = document.querySelector('#emailSubject').value;
   const note = document.querySelector('#emailMessage').value;
-  const message = `<h3>${note}</h3><br>Ingredients:<p>${ingredients}</p><br>Instructions:<p>${instructions}</p>`;
+  const message = `<h3>${note}</h3><br><u>Ingredients:</u><p>${ingredients}</p><br><u>Instructions:</u><p>${instructions}</p>`;
 
   const response = await fetch(`/api/recipes/send`,{
     method: 'POST',
