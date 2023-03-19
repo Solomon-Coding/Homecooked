@@ -5,7 +5,7 @@
       <div class=" mt-5  d-flex row g-2">
         <button id="view-recipes" type="button">Back</button>
 
-        {{!-- <button type="button" class="btn-primary" data-toggle="modal" data-target="#share-recipes">Share</button> --}}
+        <button type="button" class="btn-primary" data-toggle="modal" data-target="#share-recipes">Share</button>
       </div>
     </div>
 
@@ -22,7 +22,7 @@
           </div>
           <div class="modal-body">
             {{msg}}
-            <form class="emailForm" method="POST">
+            <form class="emailForm">
               <div class="form-group">
                 <label for="emailRecipient" style="color:black">Email Recipient</label>
                 <br>
@@ -33,23 +33,23 @@
               <div class="form-group">
                 <label for="emailSubject" style="color:black">Subject</label>
                 <br>
-                <textarea class="form-control" id="emailSubject" rows="1"></textarea>
+                <textarea spellcheck="true" class="form-control" id="emailSubject" rows="1"></textarea>
               </div>
               <br>
               <div class="form-group">
                 <label for="emailMessage" style="color:black">Message</label>
                 <br>
-                <textarea class="form-control" id="emailMessage" rows="3"></textarea>
+                <textarea spellcheck="true" class="form-control" id="emailMessage" rows="3"></textarea>
               </div>
+              <br>
               <button type="submit" value="submit" class="btn btn-primary">Send Email</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </form>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            {{!-- <button type="submit" form="emailForm" class="btn btn-primary">Send Email</button> --}}
-          </div>
+          {{!-- <div class="modal-footer"> --}}
+            {{!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" value="submit" form="emailForm" class="btn btn-primary">Send Email</button> --}}
+          {{!-- </div> --}}
         </div>
       </div>
     </div>
@@ -60,8 +60,8 @@
         {{!-- <button style="padding: 10px; background-color:rgb(174, 112, 31)">Share</button> --}}
       </div>
       <div class="card-body">
-        <h5 class="card-title" style="text-align: left;">{{individualRecipe.ingredients}}</h5>
-        <p class="card-text" style="text-align: left;">{{individualRecipe.instructions}}</p>
+        <h5 class="card-title" id="ingredients" style="text-align: left;">{{individualRecipe.ingredients}}</h5>
+        <p class="card-text" id="instructions" style="text-align: left;">{{individualRecipe.instructions}}</p>
       
       </div>
       <div class="card-footer text-muted">
