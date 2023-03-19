@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Recipes = require('../../models/Recipes');
+const nodemailer = require("nodemailer");
 // const withAuth = require('../../utils/auth');
 
 // router.get('/', withAuth ,async (req, res) => {
@@ -24,6 +25,44 @@ router.post('/', async (req, res) => {
   });
   // if the recipes is successfully created, the new response will be returned as json
   res.status(200).json(recipesData)
+} catch (err) {
+  res.status(400).json(err);
+}
+});
+
+router.post('/send', async (req, res) => {
+  
+  console.log(req.body)
+  try { 
+    const transporter = nodemailer.createTransport({
+      service:"gmail",
+      // host: "mail.gmail.com",
+      // port: 587,
+      // secure: false, // true for 465, false for other ports
+      auth: {
+        user: 'solomonvana18@gmail.com',
+        pass: 'llpmdshovixykehd',
+      }
+      // ,
+      // tls:{
+      //   rejectUnauthorized:false
+      // }
+    });
+    
+    // send mail with defined transport object
+    const mailOptions = {
+      from: '"Homecooked" <solomonvana18@gmail.com>', // sender address
+      to: `${req.body.recipient}`, // list of receivers
+      subject: `${req.body.subject}`, // Subject line
+      // text: "efv?", // plain text body
+      html: `<b>${req.body.message}</b>`, // html body
+    };
+    
+    await transporter.sendMail(mailOptions);
+    console.log("Email sent")
+    console.log("Message sent: %s", info.messageId);
+    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+    res.render("viewRecipe", {msg:'Email sent'});
 } catch (err) {
   res.status(400).json(err);
 }

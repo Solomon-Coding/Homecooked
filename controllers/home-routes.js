@@ -86,9 +86,10 @@ router.get('/addRecipe', withAuth, async (req, res) => {
 });
 
 // GET route for the editRecipe page
-router.get('/recipes/:id', withAuth, async (req, res) => {
+// router.get('/recipes/:id/edit', withAuth, async (req, res) => {
+router.get('/recipe/:id/editRecipe', withAuth, async (req, res) => {
   try {
-    const dbRecipeData = await Recipes.findByPk(req.params.id, {
+    const dbRecipeData = await Recipes.findByPk(req.id, {
       include: [
         {
           model: Category,
@@ -106,9 +107,7 @@ router.get('/recipes/:id', withAuth, async (req, res) => {
       // If no recipe data is found, redirect to a 404 page or return an error message
       return res.status(404).send('Recipe not found');
     }
-
     const editRecipe = dbRecipeData.get({ plain: true });
-
     res.render('editRecipe', {
       editRecipe,
       loggedIn: req.session.loggedIn
@@ -119,42 +118,28 @@ router.get('/recipes/:id', withAuth, async (req, res) => {
   }
 });
 
-
 // delete recipe route
 
-router.delete('/recipes/:id', withAuth, async (req, res) => {
-  try {
-    const recipe = await Recipes.findByPk(req.params.id);
+// router.delete('/recipes/:id', withAuth, async (req, res) => {
+//   try {
+//     const recipe = await Recipes.findByPk(req.params.id);
 
-    if (!recipe) {
-      return res.status(404).send('Recipe not found');
-    }
+//     if (!recipe) {
+//       return res.status(404).send('Recipe not found');
+//     }
 
-    if (recipe.userId !== req.session.userId) {
-      return res.status(403).send('You are not authorized to delete this recipe');
-    }
+//     if (recipe.userId !== req.session.userId) {
+//       return res.status(403).send('You are not authorized to delete this recipe');
+//     }
 
-    await recipe.destroy();
+//     await recipe.destroy();
 
-    res.status(200).send('Recipe deleted successfully');
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Internal Server Error');
-  }
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
+//     res.status(200).send('Recipe deleted successfully');
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).send('Internal Server Error');
+//   }
+// });
 
 
 router.get('/login', (req, res) => {
