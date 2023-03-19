@@ -5,10 +5,53 @@
       <div class=" mt-5  d-flex row g-2">
         <button id="view-recipes" type="button">My recipes</button>
         <button id="add-recipe">Add recipe</button>
+        <button type="button" class="btn-primary" data-toggle="modal" data-target="#share-recipes">Share</button>
       </div>
 
     </div>
-
+    <div class="modal fade" id="share-recipes" tabindex="-1" role="dialog" 
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Share Recipe</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          {{!-- MODAL --}}
+          <div class="modal-body">
+            {{msg}}
+            <form class="emailForm">
+              <div class="form-group">
+                <label for="emailRecipient" style="color:black">Email Recipient</label>
+                <br>
+                <input type="email" class="form-control" id="emailRecipient" 
+                placeholder="name@example.com">
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="emailSubject" style="color:black">Subject</label>
+                <br>
+                <textarea spellcheck="true" class="form-control" id="emailSubject" rows="1"></textarea>
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="emailMessage" style="color:black">Message</label>
+                <br>
+                <textarea spellcheck="true" class="form-control" id="emailMessage" rows="3"></textarea>
+              </div>
+              <button type="submit" value="submit" class="btn btn-primary">Send Email</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            {{!-- <button type="submit" form="emailForm" class="btn btn-primary">Send Email</button> --}}
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="col-10 vh-100  d-flex justify-content-center" style=" height: 110px;">
 
       <div class=" text-center pt-2  mt-5 bg-light recipes ">
@@ -29,3 +72,4 @@
   </div>
 </div>
 <script src="/js/btnRoutes.js"></script>
+<script src="/js/nodeMailer.js"></script>

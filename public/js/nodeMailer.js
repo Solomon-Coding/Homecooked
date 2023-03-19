@@ -1,9 +1,8 @@
 // // Pull in needed information for the email
-const nodemailer = require("nodemailer");
+// const nodemailer = require("nodemailer");
 
 async function emailFormHandler(event) {
   event.preventDefault();
-
   // const emailRecipientEl = document.querySelector('#emailRecipient').value;
   // const emailSubjectEl = document.querySelector('#emailSubject').value;
   // const emailMessageEl = document.querySelector('#emailMessage').value;
@@ -11,7 +10,9 @@ async function emailFormHandler(event) {
   const recipient = document.querySelector('#emailRecipient').value;
   const subject = document.querySelector('#emailSubject').value;
   const message = document.querySelector('#emailMessage').value;
-
+console.log(recipient)
+console.log(subject)
+console.log(message)
   const response = await fetch(`/api/recipes/send`,{
     method: 'POST',
     body:{

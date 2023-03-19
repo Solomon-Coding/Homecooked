@@ -86,6 +86,7 @@ router.get('/addRecipe', withAuth, async (req, res) => {
 });
 
 // GET route for the editRecipe page
+// router.get('/recipes/:id/edit', withAuth, async (req, res) => {
 router.get('/recipes/:id', withAuth, async (req, res) => {
   try {
     const dbRecipeData = await Recipes.findByPk(req.params.id, {
@@ -139,19 +140,6 @@ router.get('/recipes/:id', withAuth, async (req, res) => {
 //     res.status(500).send('Internal Server Error');
 //   }
 // });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 router.get('/login', (req, res) => {

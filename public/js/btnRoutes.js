@@ -2,7 +2,7 @@ const individualRecipeEl = document.getElementById("recipeList");
 const viewRecipesEl = document.getElementById("view-recipes");
 const editRecipeEl = document.getElementById("edit-recipe");
 const addRecipeEl = document.getElementById("add-recipe");
-const deletebtn = document.getElementById('delete-btn');
+// const deletebtn = document.getElementById('delete-btn');
 
 // View all recipes
 function toAllRecipes() {
@@ -27,6 +27,7 @@ addRecipeEl.addEventListener("click", addRecipe)
 function editRecipe(e) {
     const btnId = e.target.dataset.rid;
     document.location.href = `/editRecipe/${btnId}`;
+    // document.location.href = `/editRecipe/${btnId}/edit`;
 }
 editRecipeEl.addEventListener("click", editRecipe)
 

@@ -5,12 +5,12 @@
       <div class=" mt-5  d-flex row g-2">
         <button id="view-recipes" type="button">Back</button>
 
-        <button type="button" class="btn-primary" data-toggle="modal" data-target="#share-recipes">Share</button>
+        {{!-- <button type="button" class="btn-primary" data-toggle="modal" data-target="#share-recipes">Share</button> --}}
       </div>
     </div>
 
    {{!-- MODAL --}}
-    <div class="modal fade" id="share-recipes" tabindex="-1" role="dialog" 
+    {{!-- <div class="modal fade" id="share-recipes" tabindex="-1" role="dialog" 
     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -22,7 +22,7 @@
           </div>
           <div class="modal-body">
             {{msg}}
-            <form class="emailForm" method="POST" action="send">
+            <form class="emailForm" method="POST">
               <div class="form-group">
                 <label for="emailRecipient" style="color:black">Email Recipient</label>
                 <br>
@@ -52,7 +52,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
 
     <div class="card text-center recipes" style="margin-left: auto; margin-right: auto; margin-top: 5%; height: fit-content ;">
       <div class="card-header">
