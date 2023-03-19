@@ -30,13 +30,13 @@ router.post('/', async (req, res) => {
 }
 });
 
-router.post('/send', async (req, res) => {
+router.post('/send', (req, res) => {
   try { 
     const transporter = nodemailer.createTransport({
       service:"gmail",
       auth: {
         user: 'solomonvana18@gmail.com',
-        pass: 'llpmdshovixykehd',
+        pass: process.env.password,
       }
     });
     
@@ -46,7 +46,7 @@ router.post('/send', async (req, res) => {
       subject: `${req.body.subject}`, // Subject line
       html: `${req.body.message}`, // html body
     };
-    await transporter.sendMail(mailOptions);
+    transporter.sendMail(mailOptions);
     console.log("Email sent")
     console.log("Message sent: %s", info.messageId);
     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
