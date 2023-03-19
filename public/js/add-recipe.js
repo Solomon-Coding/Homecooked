@@ -1,4 +1,5 @@
   async function newFormHandler(event) {
+    console.log("Clicked")
     event.preventDefault();
   
     const name = document.querySelector('#nameid').value;

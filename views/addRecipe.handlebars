@@ -1,5 +1,5 @@
 <div>
-  <div class='row vh-100' style="background-color: rgb(132, 75, 9);">
+  <div class='row vh-100' style="">
 
     <div class="col-2 vh-100" style=" background-color: rgb(241, 186, 103);">
       <div class=" mt-5  d-flex row g-2">
@@ -9,10 +9,12 @@
     </div>
 
     <div class="col-10 vh-100  d-flex justify-content-center" style=" height: 110px;">
-
-      <div style="display: flex;padding-top:150px; width: inherit;justify-content: space-evenly;">
+      <div style="display: flex;padding-top:100px; width: inherit;justify-content: space-evenly;">
         <div>
           <div class="add-recipe-container">
+          <h2>
+            Add a new recipe!
+          </h2>
           <form class="new-recipe-form">
             <h2>
               Add a new recipe!
@@ -86,9 +88,11 @@
               </select>
               <br/>
               <br/>
-              <button type="submit" value="Submit">
-                Submit
-              </button>
+              {{!-- <div style="display:flex;justify-content: center"> --}}
+                <button type="submit" value="Submit">
+                  Submit
+                </button>
+              {{!-- </div> --}}
             </form>
           </div>
         </div>
