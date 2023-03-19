@@ -15,11 +15,11 @@ console.log(subject)
 console.log(message)
   const response = await fetch(`/api/recipes/send`,{
     method: 'POST',
-    body:{
+    body:JSON.stringify({
       recipient,
       subject,
       message,
-    },
+    }),
     headers: {
       'Content-Type': 'application/json',
     },
