@@ -1,23 +1,29 @@
+const ingredients = document.querySelector('#ingredients').textContent;
+const instructions = document.querySelector('#instructions').textContent;
 async function emailFormHandler(event) {
   event.preventDefault();
 
   const recipient = document.querySelector('#emailRecipient').value;
   const subject = document.querySelector('#emailSubject').value;
-  const message = document.querySelector('#emailMessage').value;
-console.log(recipient)
-console.log(subject)
-console.log(message)
+  const note = document.querySelector('#emailMessage').value;
+  const message = `<h3>${note}</h3><br>Ingredients:<p>${ingredients}</p><br>Instructions:<p>${instructions}</p>`;
+
   const response = await fetch(`/api/recipes/send`,{
     method: 'POST',
-    body:JSON.stringify({
+    body: JSON.stringify({
       recipient,
-      subject,
+      subject,  
       message,
     }),
     headers: {
       'Content-Type': 'application/json',
     },
   });
+  if (response.ok) {
+    alert('Email has been sent');
+  } else {
+    alert('Failed to send email');
+  }
 }
 
 document
