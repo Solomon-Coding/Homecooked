@@ -8,6 +8,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto ', sans-serif;
+  background-color: rgb(95, 58, 10);
 }
 
 div button {
@@ -63,7 +64,9 @@ header {
   background-color: rgb(17, 15, 29);
 
 }
-
+#title{
+  text-align: center;
+}
 header h1 {
   font-size: 60px;
 }
@@ -109,18 +112,40 @@ label {
 
 .login-in {
   background-color: rgb(175, 102, 6);
+  
 }
 
 @media screen and (max-width: 1000px) {
   .logo {
     font-size: 200%;
   }
+ 
 }
 
+#login-container{
+  width: 25%;
+}
+
+#login1{
+  padding-top: 2%;
+}
+#header1{
+  text-align: left;
+}
 
 @media screen and (max-width: 600px) {
   .logo {
     font-size: 200%;
+  }
+
+
+
+  #login-container{
+    width: 50%;
+  }
+
+  #header1{
+    text-align: center;
   }
 
   header h1 {
@@ -144,3 +169,24 @@ label {
 
 
 }
+
+
+
+
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

@@ -1,5 +1,7 @@
 async function editFormHandler(event) {
+  // console.log("Clicked")
     event.preventDefault();
+    // const editId = document.querySelector('#editId').value;
     const name = document.querySelector('#nameid').value;
     const author = document.querySelector('#authorid').value;
     const instructions = document.querySelector('#instructionsid').value;
@@ -15,7 +17,7 @@ async function editFormHandler(event) {
     // What part of our application will handle this 'put' request?
     // The Controller will handle this 'put' request.
   
-    const response = await fetch(`/api/recipe/${id}`, {
+    const response = await fetch(`/api/recipes/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
         name,
@@ -30,8 +32,6 @@ async function editFormHandler(event) {
       },
     });
   
-    // What happens if the response is ok?
-    // If the response is ok, that means that the recipe was updated successfully. 
     if (response.ok) {
       document.location.replace(`/recipe/${id}`);
     } else {
@@ -39,5 +39,7 @@ async function editFormHandler(event) {
     }
   }
   
-  document.querySelector('.edit-recipe-form').addEventListener('submit', editFormHandler);
+  document
+    .querySelector('.edit-recipe-form')
+    .addEventListener('submit', editFormHandler);
   

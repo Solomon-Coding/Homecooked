@@ -1,5 +1,5 @@
 <div>
-  <div class='row vh-100' style="background-color: rgb(132, 75, 9);">
+  <div class='row vh-100' style="">
 
     <div class="col-2 vh-100" style=" background-color: rgb(241, 186, 103);">
       <div class=" mt-5  d-flex row g-2">
@@ -9,19 +9,19 @@
     </div>
 
     <div class="col-10 vh-100  d-flex justify-content-center" style=" height: 110px;">
-      {{!-- <h2>
-        Add a new recipe!
-      </h2> --}}
-      <div style="display: flex;padding-top:150px; width: inherit;justify-content: space-evenly;">
+      <div style="display: flex;padding-top:100px; width: inherit;justify-content: space-evenly;">
         <div>
           <div class="add-recipe-container">
+          <h2>
+            Add a new recipe!
+          </h2>
           <form class="edit-recipe-form">
             <label for="recipe_name">
               Recipe Name:
             </label>
             <br />
             <textarea id="nameid" name="recipe_name" rows="1" 
-            cols="30" style="font-size: 24px;"> {{name}}</textarea>
+            cols="30" style="font-size: 24px;">{{editRecipe.name}}</textarea>
             <br />
             <br />
             <label for="author">
@@ -29,7 +29,7 @@
             </label>
             <br />
             <textarea id="authorid" name="author" rows="1" cols="30" 
-            style="font-size: 24px;"> {{author}}</textarea>
+            style="font-size: 24px;">{{editRecipe.author}}</textarea>
             <br />
             <br/>
             <label for="ingredients">
@@ -38,22 +38,16 @@
             <br/>
             <textarea id="ingredientsid" onInput="handleInput(event)" 
             name="ingredients" rows="5" cols="30" 
-            style="font-size: 24px;" wrap=physical> {{ingredients}}</textarea>
+            style="font-size: 24px;" wrap=physical>{{editRecipe.ingredients}}</textarea>
             <br />
             <br />
-          </form>
-          </div>
-        </div>
-        <div>
-          <div class="add-recipe-container">
-            <form class=".dit-recipe-form">
               <label for="instructions">
                 Recipe Instructions:
               </label>
               <br/>
               <textarea id="instructionsid" onInput="handleInput(event)" 
               name="instructions" rows="6" cols="30" 
-              style="font-size: 24px;" wrap=physical>{{instructions}}</textarea>
+              style="font-size: 24px;" wrap=physical>{{editRecipe.instructions}}</textarea>
               <br />
               <br />
               <label for="category">
@@ -62,15 +56,15 @@
               <br />
               <select id="categoryid" name="category" size="1"
               style="font-size: 20px;width: -webkit-fill-available;">
-                <option style="font-size: 24px;" value=""></option>
-                <option style="font-size: 24px;" value=1>Meat</option>
-                <option style="font-size: 24px;" value=2>Bread</option>
-                <option style="font-size: 24px;" value=3>Soup</option>
-                <option style="font-size: 24px;" value=4>Breakfast</option>
-                <option style="font-size: 24px;" value=5>Lunch</option>
-                <option style="font-size: 24px;" value=6>Dinner</option>
-                <option style="font-size: 24px;" value=7>Desert</option>
-              {{category_id}}
+                <option style="font-size: 24px;" selected disabled hidden>{{editRecipe.category.category_name}}</option>
+                <option style="font-size: 24px;" value="1">Meat</option>
+                <option style="font-size: 24px;" value='2'>Bread</option>
+                <option style="font-size: 24px;" value='3'>Soup</option>
+                <option style="font-size: 24px;" value='4'>Breakfast</option>
+                <option style="font-size: 24px;" value='5'>Lunch</option>
+                <option style="font-size: 24px;" value='6'>Dinner</option>
+                <option style="font-size: 24px;" value='7'>Desert</option>
+                
               </select>
               <br/>
               <br/>
@@ -80,24 +74,24 @@
               <br />
               <select id="styleid" name="style" size="1"
               style="font-size: 20px;width: -webkit-fill-available;">
-                <option style="font-size: 24px;" value=""></option>
+                <option style="font-size: 24px;" selected disabled hidden>{{editRecipe.style.style_name}}</option>
                 <option style="font-size: 24px;" value=1>American</option>
                 <option style="font-size: 24px;" value=2>French</option>
                 <option style="font-size: 24px;" value=3>Italian</option>
                 <option style="font-size: 24px;" value=4>Mexican</option>
-              {{style_id}}
               </select>
               <br/>
               <br/>
+              {{!-- <div style="display:flex;justify-content: center"> --}}
+              {{!-- <button id="editId" data-rid={{editRecipe.id}} type="submit" value="submit"> --}}
+                <button type="submit" value="submit">
+                  Submit
+                </button>
+              {{!-- </div> --}}
             </form>
           </div>
         </div>
       </div>
-    </div>
-    <div style="display:flex;justify-content: center">
-            <button type="submit" value="Submit">
-      Submit
-    </button>
     </div>
   </div>
 </div>

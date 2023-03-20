@@ -5,34 +5,71 @@
       <div class=" mt-5  d-flex row g-2">
         <button id="view-recipes" type="button">Back</button>
 
-        <button id="share-recipes" type="button">Share</button>
+        <button type="button" class="btn-primary" data-toggle="modal" data-target="#share-recipes">Share</button>
       </div>
-
     </div>
-    {{!-- break --}}
+
+   {{!-- MODAL --}}
+    <div class="modal fade" id="share-recipes" tabindex="-1" role="dialog" 
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Share Recipe</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            {{msg}}
+            <form class="emailForm">
+              <div class="form-group">
+                <label for="emailRecipient" style="color:black">Email Recipient</label>
+                <br>
+                <input type="email" class="form-control" id="emailRecipient" 
+                placeholder="name@example.com">
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="emailSubject" style="color:black">Subject</label>
+                <br>
+                <textarea spellcheck="true" class="form-control" id="emailSubject" rows="1"></textarea>
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="emailMessage" style="color:black">Message</label>
+                <br>
+                <textarea spellcheck="true" class="form-control" id="emailMessage" rows="3"></textarea>
+              </div>
+              <br>
+              <button type="submit" value="submit" class="btn btn-primary">Send Email</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </form>
+          </div>
+          {{!-- <div class="modal-footer"> --}}
+            {{!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" value="submit" form="emailForm" class="btn btn-primary">Send Email</button> --}}
+          {{!-- </div> --}}
+        </div>
+      </div>
+    </div>
+
     <div class="card text-center recipes" style="margin-left: auto; margin-right: auto; margin-top: 5%; height: fit-content ;">
       <div class="card-header">
         <h1>{{individualRecipe.name}}</h1>
         {{!-- <button style="padding: 10px; background-color:rgb(174, 112, 31)">Share</button> --}}
       </div>
       <div class="card-body">
-        <h5 class="card-title" style="text-align: left;">{{individualRecipe.ingredients}}</h5>
-        <p class="card-text" style="text-align: left;">{{individualRecipe.instructions}}</p>
+        <h5 class="card-title" id="ingredients" style="text-align: left;">{{individualRecipe.ingredients}}</h5>
+        <p class="card-text" id="instructions" style="text-align: left;">{{individualRecipe.instructions}}</p>
       
       </div>
       <div class="card-footer text-muted">
-        {{!-- <button id="view-recipes" style="padding: 10px; background-color:rgb(174, 112, 31)">Back</button> --}}
-        {{!-- <a href="#" class="btn mx-2 btn-danger">Delete</a> --}}
-        <button id="edit-recipe" style="background-color: rgb(139, 90, 29); border: 1px solid rgb(82, 45, 8); padding:5px 50px" type="button">Edit</button>
-        {{!-- <a href="#" class="btn btn-danger" style="background-color: rgb(139, 90, 29); border: 1px solid rgb(82, 45, 8) ">Edit</a> --}}
-         {{!-- <button id="edit-recipe" type="button" class="btn btn-danger" style="background-color: rgb(139, 90, 29); border: 1px solid rgb(82, 45, 8) ">Edit</button> --}}
-
-        {{!-- <button style="padding: 10px; background-color:rgb(174, 112, 31)">Save</button> --}}
+        <button id="edit-recipe" data-rid={{individualRecipe.id}} style="background-color: rgb(139, 90, 29); border: 1px solid rgb(82, 45, 8); padding:5px 50px" type="button">Edit</button>
       </div>
     </div>
-    {{!-- break --}}
   </div>
 </div>
 </div>
-
 <script src="/js/btnRoutes.js"></script>
+<script src="/js/nodeMailer.js"></script>

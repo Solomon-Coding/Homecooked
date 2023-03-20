@@ -1,39 +1,39 @@
-// const homeEl = document.getElementById("home-page")
-// const viewRecipesEl = document.getElementsByClassName("view-recipes");
-const viewRecipesEl = document.getElementById("view-recipes");
 const individualRecipeEl = document.getElementById("recipeList");
-const addRecipeEl = document.getElementById("add-recipe");
+const viewRecipesEl = document.getElementById("view-recipes");
 const editRecipeEl = document.getElementById("edit-recipe");
-const deletebtn = document.getElementById('delete-btn');
+const addRecipeEl = document.getElementById("add-recipe");
+// const deletebtn = document.getElementById('delete-btn');
 
-// function toHome() {
-//     document.location.href = "/"
-// }
-// homeEl.addEventListener("click", toHome);
-
+// View all recipes
 function toAllRecipes() {
     document.location.href = "/recipes"
 }
-viewRecipesEl.addEventListener("click", toAllRecipes);
+viewRecipesEl?.addEventListener("click", toAllRecipes);
 
+// View one recipe
 function toRecipe(e) {
     const btnId = e.target.dataset.rid;
     document.location.href = `/recipes/${btnId}`;
 }
-individualRecipeEl.addEventListener("click", toRecipe)
+individualRecipeEl?.addEventListener("click", toRecipe);
 
+// Add recipe
 function addRecipe() {
     document.location.href = `/addRecipe`;
 }
-addRecipeEl.addEventListener("click", addRecipe)
+addRecipeEl?.addEventListener("click", addRecipe);
 
+// Edit recipe
 function editRecipe(e) {
     const btnId = e.target.dataset.rid;
-    document.location.href = `/editRecipe/${btnId}`;
+    document.location.href = `/edit/${btnId}`;
+    // document.location.href = `/editRecipe`;
 }
-editRecipeEl.addEventListener("click", editRecipe)
+editRecipeEl?.addEventListener("click", editRecipe);
 
-function deleteRecipe(e) {
-    const  btnId = e.target.dataset.rid;
-    document.location.href = `/recipes/${btnId}`;
-}
+// // Delete recipe
+// function deleteRecipe(e) {
+//     const  btnId = e.target.dataset.rid;
+//     document.location.href = `/recipes/${btnId}`;
+// }
+// deletebtn?.addEventListener("click", editRecipe);
