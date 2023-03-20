@@ -23,17 +23,17 @@ router.post('/', async (req, res) => {
 
 router.post('/send', (req, res) => {
   try { 
-    let nodemailer;
-    if (process.env.JAWSDB_URL) {
-      nodemailer = new Nodemailer(process.env.JAWSDB_URL);
-    } else {
-      nodemailer = new Nodemailer(process.env.password)
-    }
-    const transporter = nodemailer.createTransport({
+    // let nodemailer;
+    // if (process.env.JAWSDB_URL) {
+    //   nodemailer = new Nodemailer(process.env.JAWSDB_URL);
+    // } else {
+    //   nodemailer = new Nodemailer(process.env.password)
+    // }
+    const transporter = Nodemailer.createTransport({
       service:"gmail",
       auth: {
         user: 'solomonvana18@gmail.com',
-        pass: process.env.password,
+        pass: 'llpmdshovixykehd',
       }
     });
   
