@@ -2,10 +2,10 @@
   <div class='row vh-100' style="background-color: rgb(132, 75, 9);">
 
     <div class="col-2 vh-100" style=" background-color: rgb(241, 186, 103);">
-      <div class=" mt-5  d-flex row g-2">
-        <button id="view-recipes" type="button">Back</button>
+      <div class=" mt-5  d-flex row g-2" style="padding-left:10%;">
+        <button id="view-recipes" class="darkButton" type="button">Back</button>
 
-        <button type="button" class="btn-primary" data-toggle="modal" data-target="#share-recipes">Share</button>
+        <button type="button" class="btn-primary darkButton" data-toggle="modal" data-target="#share-recipes">Share</button>
       </div>
     </div>
 
@@ -14,13 +14,13 @@
     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Share Recipe</h5>
+          <div class="modal-header" style="background-color:rgb(132, 75, 9);color:white;">
+            <h2 class="modal-title" id="exampleModalLongTitle">Share Recipe</h2>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" style="background-color:rgb(241, 186, 103);color:white">
             {{msg}}
             <form class="emailForm">
               <div class="form-group">
@@ -42,7 +42,7 @@
                 <textarea spellcheck="true" class="form-control" id="emailMessage" rows="3"></textarea>
               </div>
               <br>
-              <button type="submit" value="submit" class="btn btn-primary">Send Email</button>
+              <button type="submit" value="submit" class="btn btn-primary" style="background-color:rgb(58, 47, 29);border-color: rgb(58, 47, 29);">Send Email</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </form>
           </div>
@@ -65,7 +65,7 @@
       
       </div>
       <div class="card-footer text-muted">
-        <button id="edit-recipe" data-rid={{individualRecipe.id}} style="background-color: rgb(139, 90, 29); border: 1px solid rgb(82, 45, 8); padding:5px 50px" type="button">Edit</button>
+        <button id="edit-recipe" class="darkButton" data-rid={{individualRecipe.id}} style="background-color: rgb(139, 90, 29); border: 1px solid rgb(82, 45, 8); padding:5px 50px" type="button">Edit</button>
       </div>
     </div>
   </div>
