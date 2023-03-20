@@ -61,7 +61,6 @@ router.get('/recipes/:id', withAuth, async (req, res) => {
     }
 
     const individualRecipe = dbRecipeData.get({ plain: true });
-
     res.render('viewRecipe', {
       individualRecipe,
       loggedIn: req.session.loggedIn
@@ -86,10 +85,10 @@ router.get('/addRecipe', withAuth, async (req, res) => {
 });
 
 // GET route for the editRecipe page
-// router.get('/recipes/:id/edit', withAuth, async (req, res) => {
-router.get('/recipe/:id/editRecipe', withAuth, async (req, res) => {
+// router.get('/Recipe/edit/id:', withAuth, async (req, res) => {
+router.get('/edit/:id', withAuth, async (req, res) => {
   try {
-    const dbRecipeData = await Recipes.findByPk(req.id, {
+    const dbRecipeData = await Recipes.findByPk(req.params.id, {
       include: [
         {
           model: Category,

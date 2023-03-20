@@ -26,8 +26,8 @@ addRecipeEl?.addEventListener("click", addRecipe);
 // Edit recipe
 function editRecipe(e) {
     const btnId = e.target.dataset.rid;
-    document.location.href = `/editRecipe/${btnId}/editRecipe`;
-    // document.location.href = `/editRecipe/${btnId}/edit`;
+    document.location.href = `/edit/${btnId}`;
+    // document.location.href = `/editRecipe`;
 }
 editRecipeEl?.addEventListener("click", editRecipe);
 

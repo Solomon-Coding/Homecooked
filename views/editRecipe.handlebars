@@ -1,5 +1,6 @@
+
 <div>
-  <div class='row vh-100' style="background-color: rgb(132, 75, 9);">
+  <div class='row vh-100' style="">
 
     <div class="col-2 vh-100" style=" background-color: rgb(241, 186, 103);">
       <div class=" mt-5  d-flex row g-2">
@@ -9,19 +10,20 @@
     </div>
 
     <div class="col-10 vh-100  d-flex justify-content-center" style=" height: 110px;">
-      {{!-- <h2>
-        Add a new recipe!
-      </h2> --}}
-      <div style="display: flex;padding-top:150px; width: inherit;justify-content: space-evenly;">
+      <div style="display: flex;padding-top:100px; width: inherit;justify-content: space-evenly;">
         <div>
           <div class="add-recipe-container">
-          <form class="edit-recipe-form">
+          <h2>
+            Add a new recipe!
+          </h2>
+          <form class="new-recipe-form">
             <label for="recipe_name">
               Recipe Name:
             </label>
             <br />
             <textarea id="nameid" name="recipe_name" rows="1" 
-            cols="30" style="font-size: 24px;"> {{editRecipe.name}}</textarea>
+            cols="30" style="font-size: 24px;"> {{editRecipe.name}}
+            </textarea>
             <br />
             <br />
             <label for="author">
@@ -29,7 +31,8 @@
             </label>
             <br />
             <textarea id="authorid" name="author" rows="1" cols="30" 
-            style="font-size: 24px;"> {{editRecipe.author}}</textarea>
+            style="font-size: 24px;"> {{editRecipe.author}}
+            </textarea>
             <br />
             <br/>
             <label for="ingredients">
@@ -38,7 +41,8 @@
             <br/>
             <textarea id="ingredientsid" onInput="handleInput(event)" 
             name="ingredients" rows="5" cols="30" 
-            style="font-size: 24px;" wrap=physical> {{editRecipe.ingredients}}</textarea>
+            style="font-size: 24px;" wrap=physical> {{editRecipe.ingredients}}
+            </textarea>
             <br />
             <br />
               <label for="instructions">
@@ -47,7 +51,8 @@
               <br/>
               <textarea id="instructionsid" onInput="handleInput(event)" 
               name="instructions" rows="6" cols="30" 
-              style="font-size: 24px;" wrap=physical>{{editRecipe.instructions}}</textarea>
+              style="font-size: 24px;" wrap=physical> {{editRecipe.instructions}}
+              </textarea>
               <br />
               <br />
               <label for="category">
@@ -64,7 +69,7 @@
                 <option style="font-size: 24px;" value=5>Lunch</option>
                 <option style="font-size: 24px;" value=6>Dinner</option>
                 <option style="font-size: 24px;" value=7>Desert</option>
-              {{!-- {{editRecipe.category_id}} --}}
+                {{!-- {{editRecipe.category_id}} --}}
               </select>
               <br/>
               <br/>
@@ -79,22 +84,22 @@
                 <option style="font-size: 24px;" value=2>French</option>
                 <option style="font-size: 24px;" value=3>Italian</option>
                 <option style="font-size: 24px;" value=4>Mexican</option>
-              {{!-- {{editRecipe.style_id}} --}}
+                {{!-- {{editRecipe.style_id}} --}}
               </select>
               <br/>
               <br/>
+              {{!-- <div style="display:flex;justify-content: center"> --}}
+                <button type="submit" value="Submit">
+                  Submit
+                </button>
+              {{!-- </div> --}}
             </form>
           </div>
         </div>
       </div>
     </div>
-    <div style="display:flex;justify-content: center">
-            <button type="submit" value="Submit">
-      Submit
-    </button>
-    </div>
   </div>
 </div>
-<script src="/js/btnRoutes.js"></script>
-<script src="/js/edit-recipe.js"></script>
 
+<script src="/js/add-recipe.js"></script>
+<script src="/js/btnRoutes.js"></script>

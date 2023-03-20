@@ -1,5 +1,6 @@
 async function editFormHandler(event) {
     event.preventDefault();
+    const editRecipeEl = document.getElementById("edit-recipe");
     const name = document.querySelector('#nameid').value;
     const author = document.querySelector('#authorid').value;
     const instructions = document.querySelector('#instructionsid').value;
