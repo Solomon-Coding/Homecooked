@@ -33,7 +33,7 @@
   
   document
     .querySelector('.new-recipe-form')
-    .addEventListener('submit', newFormHandler);
+    ?.addEventListener('submit', newFormHandler);
   
 // let previousLength = 0;
 
