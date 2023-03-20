@@ -22,8 +22,7 @@
             </label>
             <br />
             <textarea id="nameid" name="recipe_name" rows="1" 
-            cols="30" style="font-size: 24px;"> {{editRecipe.name}}
-            </textarea>
+            cols="30" style="font-size: 24px;">{{editRecipe.name}}</textarea>
             <br />
             <br />
             <label for="author">
@@ -31,8 +30,7 @@
             </label>
             <br />
             <textarea id="authorid" name="author" rows="1" cols="30" 
-            style="font-size: 24px;"> {{editRecipe.author}}
-            </textarea>
+            style="font-size: 24px;">{{editRecipe.author}}</textarea>
             <br />
             <br/>
             <label for="ingredients">
@@ -41,8 +39,7 @@
             <br/>
             <textarea id="ingredientsid" onInput="handleInput(event)" 
             name="ingredients" rows="5" cols="30" 
-            style="font-size: 24px;" wrap=physical> {{editRecipe.ingredients}}
-            </textarea>
+            style="font-size: 24px;" wrap=physical>{{editRecipe.ingredients}}</textarea>
             <br />
             <br />
               <label for="instructions">
@@ -51,8 +48,7 @@
               <br/>
               <textarea id="instructionsid" onInput="handleInput(event)" 
               name="instructions" rows="6" cols="30" 
-              style="font-size: 24px;" wrap=physical> {{editRecipe.instructions}}
-              </textarea>
+              style="font-size: 24px;" wrap=physical>{{editRecipe.instructions}}</textarea>
               <br />
               <br />
               <label for="category">
@@ -61,15 +57,15 @@
               <br />
               <select id="categoryid" name="category" size="1"
               style="font-size: 20px;width: -webkit-fill-available;">
-                <option style="font-size: 24px;" value=""></option>
-                <option style="font-size: 24px;" value=1>Meat</option>
-                <option style="font-size: 24px;" value=2>Bread</option>
-                <option style="font-size: 24px;" value=3>Soup</option>
-                <option style="font-size: 24px;" value=4>Breakfast</option>
-                <option style="font-size: 24px;" value=5>Lunch</option>
-                <option style="font-size: 24px;" value=6>Dinner</option>
-                <option style="font-size: 24px;" value=7>Desert</option>
-                {{!-- {{editRecipe.category_id}} --}}
+                <option style="font-size: 24px;" selected disabled hidden>{{editRecipe.category.category_name}}</option>
+                <option style="font-size: 24px;" value="1">Meat</option>
+                <option style="font-size: 24px;" value='2'>Bread</option>
+                <option style="font-size: 24px;" value='3'>Soup</option>
+                <option style="font-size: 24px;" value='4'>Breakfast</option>
+                <option style="font-size: 24px;" value='5'>Lunch</option>
+                <option style="font-size: 24px;" value='6'>Dinner</option>
+                <option style="font-size: 24px;" value='7'>Desert</option>
+                
               </select>
               <br/>
               <br/>
@@ -79,17 +75,16 @@
               <br />
               <select id="styleid" name="style" size="1"
               style="font-size: 20px;width: -webkit-fill-available;">
-                <option style="font-size: 24px;" value=""></option>
+                <option style="font-size: 24px;" selected disabled hidden>{{editRecipe.style.style_name}}</option>
                 <option style="font-size: 24px;" value=1>American</option>
                 <option style="font-size: 24px;" value=2>French</option>
                 <option style="font-size: 24px;" value=3>Italian</option>
                 <option style="font-size: 24px;" value=4>Mexican</option>
-                {{!-- {{editRecipe.style_id}} --}}
               </select>
               <br/>
               <br/>
               {{!-- <div style="display:flex;justify-content: center"> --}}
-                <button type="submit" value="Submit">
+                <button id="editId" data-rid={{editRecipe.id}} type="submit" value="Submit">
                   Submit
                 </button>
               {{!-- </div> --}}

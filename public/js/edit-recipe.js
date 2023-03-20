@@ -1,6 +1,6 @@
 async function editFormHandler(event) {
     event.preventDefault();
-    const editRecipeEl = document.getElementById("edit-recipe");
+    // const editId = document.querySelector('#editId').value;
     const name = document.querySelector('#nameid').value;
     const author = document.querySelector('#authorid').value;
     const instructions = document.querySelector('#instructionsid').value;
@@ -40,5 +40,7 @@ async function editFormHandler(event) {
     }
   }
   
-  document.querySelector('.edit-recipe-form').addEventListener('submit', editFormHandler);
+  document
+    .querySelector('.edit-recipe-form')
+    .addEventListener('submit', editFormHandler);
   

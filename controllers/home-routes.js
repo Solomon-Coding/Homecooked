@@ -106,7 +106,9 @@ router.get('/edit/:id', withAuth, async (req, res) => {
       // If no recipe data is found, redirect to a 404 page or return an error message
       return res.status(404).send('Recipe not found');
     }
+    console.log(dbRecipeData)
     const editRecipe = dbRecipeData.get({ plain: true });
+    console.log(editRecipe)
     res.render('editRecipe', {
       editRecipe,
       loggedIn: req.session.loggedIn
