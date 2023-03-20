@@ -35,15 +35,17 @@ SO THAT I can  have access to my recipes at any time.
 
 ## Link
 
-This is a link to the project hosted on Heroku: [https://solomon-coding.github.io/movieQue/](https://solomon-coding.github.io/movieQue/)
+Link to the project hosted on Heroku: [https://homecooked.herokuapp.com/](https://homecooked.herokuapp.com/)
 
+Link to the GitHub repository: 
+[https://github.com/Solomon-Coding/Homecooked.git/](https://github.com/Solomon-Coding/Homecooked.git/)
 ## Usage
 
 <!-- Provide instructions and examples for use. Include screenshots as needed. -->
 
 This image is an example of what to expect when viewing the website.
 
-![This is a working image of this project](assets/images/demo-screenshot.gif)
+![This is a working image of this project](public/images/video_walkthrough.gif)
 
 ## Credits
 
@@ -56,8 +58,8 @@ This image is an example of what to expect when viewing the website.
 <!-- If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section. -->
 
 **Assets:**
-- [Movie Reel Clipart](https://pixabay.com/vectors/film-film-reel-video-cinema-161204/)
-- [Background Image of Movie Theater](https://www.pexels.com/photo/time-lapse-photography-of-car-lights-in-front-of-cinema-436413/)
+- [Mixing bowl Clipart](https://creazilla.com/nodes/6130902-mixing-bowl-and-spoon-clipart/)
+
 
 
 ## License
