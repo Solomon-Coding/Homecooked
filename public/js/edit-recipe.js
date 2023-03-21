@@ -8,15 +8,15 @@ async function editFormHandler(event) {
     const ingredients = document.querySelector('#ingredientsid').value;
     const category_id = document.querySelector('#categoryid').value;
     const style_id = document.querySelector('#styleid').value;
-    
+    // console.log(category_id)
     // window.location gives us access to the URL. We then use the .split() method to access the number at the end of the URL and set that equal to id.
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
-  
+
     // What part of our application will handle this 'put' request?
     // The Controller will handle this 'put' request.
-  
+    console.log("here 2")
     const response = await fetch(`/api/recipes/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
@@ -31,9 +31,9 @@ async function editFormHandler(event) {
         'Content-Type': 'application/json',
       },
     });
-  
+    console.log("here 3")
     if (response.ok) {
-      document.location.replace(`/recipe/${id}`);
+      document.location.replace(`/recipes/${id}`);
     } else {
       alert('Failed to edit recipe');
     }
@@ -41,5 +41,5 @@ async function editFormHandler(event) {
   
   document
     .querySelector('.edit-recipe-form')
-    .addEventListener('submit', editFormHandler);
+    ?.addEventListener('submit', editFormHandler);
   

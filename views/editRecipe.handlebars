@@ -58,14 +58,14 @@
               <br />
               <select id="categoryid" name="category" size="1"
               style="font-size: 20px;width: -webkit-fill-available;">
-                <option style="font-size: 24px;" selected disabled hidden>{{editRecipe.category.category_name}}</option>
-                <option style="font-size: 24px;" value="1">Meat</option>
-                <option style="font-size: 24px;" value='2'>Bread</option>
-                <option style="font-size: 24px;" value='3'>Soup</option>
-                <option style="font-size: 24px;" value='4'>Breakfast</option>
-                <option style="font-size: 24px;" value='5'>Lunch</option>
-                <option style="font-size: 24px;" value='6'>Dinner</option>
-                <option style="font-size: 24px;" value='7'>Desert</option>
+                <option style="font-size: 24px;" selected disabled hidden value={{editRecipe.category.id}}>{{editRecipe.category.category_name}}</option>
+                <option style="font-size: 24px;" value=1>Meat</option>
+                <option style="font-size: 24px;" value=2>Bread</option>
+                <option style="font-size: 24px;" value=3>Soup</option>
+                <option style="font-size: 24px;" value=4>Breakfast</option>
+                <option style="font-size: 24px;" value=5>Lunch</option>
+                <option style="font-size: 24px;" value=6>Dinner</option>
+                <option style="font-size: 24px;" value=7>Desert</option>
                 
               </select>
               <br/>
@@ -76,7 +76,7 @@
               <br />
               <select id="styleid" name="style" size="1"
               style="font-size: 20px;width: -webkit-fill-available;">
-                <option style="font-size: 24px;" selected disabled hidden>{{editRecipe.style.style_name}}</option>
+                <option style="font-size: 24px;" selected disabled hidden value={{editRecipe.style.id}}>{{editRecipe.style.style_name}}</option>
                 <option style="font-size: 24px;" value=1>American</option>
                 <option style="font-size: 24px;" value=2>French</option>
                 <option style="font-size: 24px;" value=3>Italian</option>
